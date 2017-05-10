@@ -1,3 +1,4 @@
+/* Prefix with .App to give precedence over bootstrap styles */
 .App h1, .App h2, .App h3, .App h4, .App h5, .App h6 {
   font-family: 'Roboto Slab', serif;
 }
