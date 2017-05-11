@@ -1,18 +1,16 @@
 import { connect } from 'react-redux'
 import InvoiceList from '../components/InvoiceList'
-
-const deleteInvoice = (id) => {
-  console.log("deleteInvoice " + id)
-}
+import * as actions from '../actions'
 
 const mapStateToProps = (state) => ({
-  invoices: state.invoices.invoices,
-  onClickDelete: (id) => { deleteInvoice(id) }
+  invoices: state.invoices.invoices
 })
 
-const mapDispatchToProps = {
-  onInvoiceDelete: deleteInvoice
-}
+const mapDispatchToProps = (dispatch) => ({
+  handleDeleteInvoice: (id) => {
+    dispatch(actions.deleteInvoice(id))
+  }
+})
 
 const InvoiceListContainer = connect(
   mapStateToProps,

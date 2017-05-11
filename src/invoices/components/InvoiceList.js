@@ -6,7 +6,13 @@ import NumberFormat from 'react-number-format'
 
 class InvoiceList extends Component {
   render() {
-    const { invoices, onClickDelete } = this.props
+    const { invoices, handleDeleteInvoice } = this.props
+
+    const getMailToLink = (invoice) => {
+      const subject = encodeURI("Invoice: " + invoice.title)
+      const body = "Please view your invoice at this web page: http://example.com/invoices/" + invoice.id
+      return "mailto:?subject=" + subject + "&body=" + body
+    }
     return (
       <div>
         <h1>Invoices</h1>
@@ -35,11 +41,11 @@ class InvoiceList extends Component {
                 <td><NumberFormat value={invoice.total} displayType={'text'} thousandSeparator={true} decimalPrecision={true} prefix={'$'} /></td>
                 <td>{invoice.status}</td>
                 <td>
-                  <Button className='btn-xs btn-info'><Glyphicon glyph='envelope'/></Button>
+                  <a target='blank' href={getMailToLink(invoice)}><Button className='btn-xs btn-info'><Glyphicon glyph='envelope'/></Button></a>
                   <LinkContainer to={"/edit/" + invoice.id} className='btn-xs btn-primary'>
                     <Button><Glyphicon glyph='pencil'/></Button>
                   </LinkContainer>
-                  <Button className='btn-xs btn-danger' onClick={() => onClickDelete(invoice.id)}><Glyphicon glyph='trash'/></Button>
+                  <Button className='btn-xs btn-danger' onClick={() => handleDeleteInvoice(invoice.id)}><Glyphicon glyph='trash'/></Button>
                 </td>
               </tr>
             )}
@@ -61,7 +67,8 @@ InvoiceList.propTypes = {
       price: PropTypes.number.isRequired
     }).isRequired).isRequired,
     notes: PropTypes.text
-  }).isRequired).isRequired
+  }).isRequired).isRequired,
+  handleDeleteInvoice: PropTypes.func.isRequired
 }
 
 export default InvoiceList

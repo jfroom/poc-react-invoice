@@ -1,40 +1,22 @@
-import ACTION_TYPES from './actionTypes'
+import { handleActions } from 'redux-actions';
+import * as actionTypes from './actionTypes'
 
-const invoice = (state, action) => {
-  switch (action.type) {
-    case ACTION_TYPES.ADD_INVOICE:
-      return {
-        id: action.id,
-        desc: action.desc,
-        status: action.status
-      }
-    case ACTION_TYPES.EDIT_INVOICE:
-      if (state.id !== action.id) {
-        return state
-      }
-      break
-
-    default:
-      return state
+const reducer = handleActions({
+  [actionTypes.ADD_INVOICE]: (state, action) => {
+    const id = state.nextId
+    const invoice = Object.assign({}, action.payload, {id})
+    const invoices = state.invoices.slice()
+    invoices.push(invoice)
+    return {...state, invoices, nextId: id + 1}
+  },
+  [actionTypes.EDIT_INVOICE]: (state, action) => {
+    const invoices = state.invoices.map((invoice) => invoice.id === action.payload.id ? action.payload : invoice)
+    return {...state, invoices}
+  },
+  [actionTypes.DELETE_INVOICE]: (state, action) => {
+    const invoices = state.invoices.filter((invoice) => invoice.id !== action.payload)
+    return {...state, invoices}
   }
-}
-
-const reducer = (state = {}, action) => {
-  switch (action.type) {
-    case ACTION_TYPES.ADD_INVOICE:
-      return [
-        ...state,
-        invoice(undefined, action)
-      ]
-    case ACTION_TYPES.DELETE_INVOICE:
-      return state
-    case ACTION_TYPES.EDIT_INVOICE:
-      return state.map(t =>
-        invoice(t, action)
-      )
-    default:
-      return state
-  }
-}
+}, {})
 
 export default reducer

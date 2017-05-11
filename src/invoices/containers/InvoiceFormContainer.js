@@ -1,30 +1,27 @@
 import { connect } from 'react-redux'
 import InvoiceForm from '../components/InvoiceForm'
+import * as actions from '../actions'
 
-const deleteItem = (id) => {
-  console.log("deleteItem " + id)
-}
-const addItem = (text, price) => {
-  console.log("addItem " + text + ' price: ' + price)
-}
 const mapStateToProps = (state, ownProps) => {
-  let props = {
-    onClickDeleteItem: (id) => { deleteItem(id) },
-    onClickAddItem: (id) => { addItem(id) }
-  }
-  const parts = ownProps.location.pathname.split('/')
-  props.action = parts[1]
-  if (props.action === 'edit') {
-    const id = parseInt(parts[2], 10)
+  let props = {invoice: null}
+  const pathParts = ownProps.location.pathname.split('/')
+  if (pathParts[1] === 'edit') {
+    const id = parseInt(pathParts[2], 10)
     props.invoice = state.invoices.invoices.find((invoice) => invoice.id === id)
   }
   return props
 }
 
-const mapDispatchToProps = {
-  onItemDelete: deleteItem,
-  onItemAdd: addItem
-}
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  handleAddInvoice: (invoice) => {
+    dispatch(actions.addInvoice(invoice))
+    ownProps.history.push('/')
+  },
+  handleEditInvoice: (invoice) => {
+    dispatch(actions.editInvoice(invoice))
+    ownProps.history.push('/')
+  }
+})
 
 const InvoiceFormContainer = connect(
   mapStateToProps,

@@ -7,7 +7,7 @@ const initialState =
         id: 1,
         title: "Hoyt Residence Kitchen Remodel",
         status: "due",
-        total: 7000, // TODO: compute this dynamically with Reselect
+        total: 7000,
         items: [
           {
             text: 'Quartz Counters',
@@ -22,7 +22,7 @@ const initialState =
       },
       {
         id: 2,
-        title: "Lovejoy Bathroom Remodel",
+        title: "Lovejoy Residence Bathroom Remodel",
         status: "overdue",
         total: 7000.99,
         items: [
