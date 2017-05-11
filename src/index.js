@@ -1,15 +1,14 @@
 import React from 'react'
 import { render } from 'react-dom'
-
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import App from './components/App'
-import reducer from './reducer'
+import App from './main/components/App'
+import rootReducer from './main/reducer'
+import initialState from './initialState'
 
 import 'bootstrap/dist/css/bootstrap.css'
-import './styles/index.css'
 
-let store = createStore(reducer)
+let store = createStore(rootReducer, initialState)
 
 render(
   <Provider store={store}>

@@ -3,10 +3,14 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import { withRouter } from 'react-router'
 
 import Header from './Header'
-import Breadcrumb from './Breadcrumb'
-import InvoiceListContainer from '../containers/InvoiceListContainer'
-import InvoiceFormContainer from '../containers/InvoiceFormContainer'
-import '../styles/App.css';
+import {
+  Breadcrumb,
+  InvoiceFormContainer,
+  InvoiceListContainer
+} from '../../invoices'
+
+import '../index.css';
+import '../../invoices/index.css';
 
 class App extends Component {
   render() {

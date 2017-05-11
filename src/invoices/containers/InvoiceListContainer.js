@@ -6,7 +6,7 @@ const deleteInvoice = (id) => {
 }
 
 const mapStateToProps = (state) => ({
-  invoices: state.invoices,
+  invoices: state.invoices.invoices,
   onClickDelete: (id) => { deleteInvoice(id) }
 })
 

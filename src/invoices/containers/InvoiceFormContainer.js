@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
   props.action = parts[1]
   if (props.action === 'edit') {
     const id = parseInt(parts[2], 10)
-    props.invoice = state.invoices.find((invoice) => invoice.id === id)
+    props.invoice = state.invoices.invoices.find((invoice) => invoice.id === id)
   }
   return props
 }

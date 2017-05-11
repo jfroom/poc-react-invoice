@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types'
 import {
   Button, Table, FormGroup, ControlLabel, FormControl, Glyphicon
 } from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import NumberFormat from 'react-number-format'
 
-export default class InvoiceForm extends Component {
+class InvoiceForm extends Component {
   render() {
     const invoiceEmpty = {title: '', status: '', total: 0, items: []}
     const invoice = this.props.invoice ? this.props.invoice : invoiceEmpty
@@ -111,3 +112,18 @@ export default class InvoiceForm extends Component {
     )
   }
 }
+
+InvoiceForm.propTypes = {
+  invoice: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    total: PropTypes.number.isRequired,
+    items: PropTypes.arrayOf(PropTypes.shape({
+      text: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired
+    }).isRequired).isRequired,
+    notes: PropTypes.text
+  }).isRequired
+}
+export default InvoiceForm
