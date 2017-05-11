@@ -13,7 +13,7 @@
   float: right;
   margin-right: -15px;
 }
-.invoice-list td:nth-child(2){
+.invoice-list td:nth-child(1){
   width: 50%;
 }
 .line-items .form-group {
@@ -31,4 +31,11 @@
 }
 .btn {
   margin: 2px;
+}
+
+.breadcrumb, .InvoiceForm h1 {
+  text-transform: capitalize;
+}
+.InvoiceForm .line-items {
+  margin-bottom: 0;
 }
