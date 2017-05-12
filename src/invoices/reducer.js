@@ -16,7 +16,8 @@ const reducer = handleActions({
   [actionTypes.DELETE_INVOICE]: (state, action) => {
     const invoices = state.invoices.filter((invoice) => invoice.id !== action.payload)
     return {...state, invoices}
-  }
+  },
+  [actionTypes.CHANGE_STATUS_FILTER]: (state, action) => ({...state, statusFilter: action.payload})
 }, {})
 
 export default reducer

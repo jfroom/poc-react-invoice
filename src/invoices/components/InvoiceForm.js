@@ -44,6 +44,7 @@ class InvoiceForm extends Component {
       {
         id: this.state.invoice.id,
         title: document.querySelector('#title').value,
+        date: document.querySelector('#date').value,
         status: document.querySelector('#status').value,
         notes: document.querySelector('#notes').value
       }
@@ -74,15 +75,20 @@ class InvoiceForm extends Component {
         <hr/>
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <div className='row'>
-            <div className='col-sm-10'>
-              <FormGroup controlId='title' validationState={null}>
+            <div className='col-sm-8'>
+              <FormGroup controlId='title'>
                 <ControlLabel>Title</ControlLabel>
                 <FormControl type='text' defaultValue={this.state.invoice.title} placeholder='Enter title' onChange={() => {}}/>
-                <FormControl.Feedback/>
               </FormGroup>
             </div>
             <div className='col-sm-2'>
-              <FormGroup controlId='status' validationState={null}>
+              <FormGroup controlId='date'>
+                <ControlLabel>Due Date</ControlLabel>
+                <FormControl type='text' placeholder="Ex. 1/1/2017" defaultValue={this.state.invoice.date} onChange={() => {}} />
+              </FormGroup>
+            </div>
+            <div className='col-sm-2'>
+              <FormGroup controlId='status'>
                 <ControlLabel>Status</ControlLabel>
                 <FormControl componentClass="select" value={this.state.invoice.status} onChange={() => {}}>
                   <option value={STATUS_TYPE.UNPAID}>{STATUS_TYPE.UNPAID}</option>
@@ -92,8 +98,7 @@ class InvoiceForm extends Component {
             </div>
           </div>
 
-
-          <FormGroup controlId='line-items' validationState={null}>
+          <FormGroup controlId='line-items'>
             <ControlLabel>Line Items</ControlLabel>
             <div className='well'>
               <Table condensed className='line-items'>
@@ -108,15 +113,13 @@ class InvoiceForm extends Component {
                   {renderItems()}
                   <tr>
                     <td>
-                      <FormGroup controlId={'lineitem-text'} validationState={null}>
+                      <FormGroup controlId={'lineitem-text'}>
                         <FormControl type='text' defaultValue='' placeholder="Enter line item"/>
-                        <FormControl.Feedback/>
                       </FormGroup>
                     </td>
                     <td>
-                      <FormGroup controlId={'lineitem-price'} validationState={null}>
+                      <FormGroup controlId={'lineitem-price'}>
                         <FormControl type='number' step='any' min='0' defaultValue='' placeholder="Enter price"/>
-                        <FormControl.Feedback/>
                       </FormGroup>
                     </td>
                     <td>
@@ -129,18 +132,16 @@ class InvoiceForm extends Component {
               </div>
             </FormGroup>
 
-          <FormGroup controlId='total' validationState={null}>
+          <FormGroup controlId='total'>
             <ControlLabel>Total Due</ControlLabel>
             <FormControl.Static>
               <NumberFormat value={this.state.invoice.total} displayType={'text'} thousandSeparator={true} decimalPrecision={true} prefix={'$'} />
             </FormControl.Static>
-            <FormControl.Feedback/>
           </FormGroup>
 
-          <FormGroup controlId='notes' validationState={null}>
+          <FormGroup controlId='notes'>
             <ControlLabel>Notes</ControlLabel>
             <FormControl componentClass='textArea' defaultValue={this.state.invoice.notes} placeholder='Enter notes' onChange={() => {}}/>
-            <FormControl.Feedback/>
           </FormGroup>
 
           <div className='text-right'>
@@ -160,6 +161,7 @@ InvoiceForm.propTypes = {
   invoice: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
+    date:  PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
     total: PropTypes.number.isRequired,
     items: PropTypes.arrayOf(PropTypes.shape({

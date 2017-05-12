@@ -1,11 +1,12 @@
 const initialState =
 {
   invoices: {
-    nextId: 3,
+    nextId: 4,
     invoices: [
       {
         id: 1,
         title: "Hoyt Residence Kitchen Remodel",
+        date: "1/1/2020",
         status: "Unpaid",
         total: 7000,
         items: [
@@ -23,6 +24,7 @@ const initialState =
       {
         id: 2,
         title: "Lovejoy Residence Bathroom Remodel",
+        date: "5/1/2017",
         status: "Paid",
         total: 7000.99,
         items: [
@@ -36,6 +38,24 @@ const initialState =
           }
         ],
         notes: "Payment due net-30."
+      },
+      {
+        id: 3,
+        title: "Glisan Residence Living Room Remodel",
+        date: "5/10/2017",
+        status: "Unpaid",
+        total: 7090.99,
+        items: [
+          {
+            text: 'Hardwood Floors',
+            price: 1090.99
+          },
+          {
+            text: 'Ceiling Fan',
+            price: 2000
+          }
+        ],
+        notes: "Enjoy!"
       }
     ]
   }
