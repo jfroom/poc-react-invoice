@@ -5,6 +5,7 @@ import {
 } from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 import NumberFormat from 'react-number-format'
+import { STATUS_TYPE } from '../constants'
 
 class InvoiceForm extends Component {
   constructor(props) {
@@ -83,10 +84,9 @@ class InvoiceForm extends Component {
             <div className='col-sm-2'>
               <FormGroup controlId='status' validationState={null}>
                 <ControlLabel>Status</ControlLabel>
-                <FormControl componentClass="select" placeholder="Status" defaultValue={this.state.invoice.status} onChange={() => {}}>
-                  <option value="due">Due</option>
-                  <option value="overdue">Overdue</option>
-                  <option value="paid">Paid</option>
+                <FormControl componentClass="select" value={this.state.invoice.status} onChange={() => {}}>
+                  <option value={STATUS_TYPE.UNPAID}>{STATUS_TYPE.UNPAID}</option>
+                  <option value={STATUS_TYPE.PAID}>{STATUS_TYPE.PAID}</option>
                 </FormControl>
               </FormGroup>
             </div>

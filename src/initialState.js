@@ -6,7 +6,7 @@ const initialState =
       {
         id: 1,
         title: "Hoyt Residence Kitchen Remodel",
-        status: "due",
+        status: "Unpaid",
         total: 7000,
         items: [
           {
@@ -23,7 +23,7 @@ const initialState =
       {
         id: 2,
         title: "Lovejoy Residence Bathroom Remodel",
-        status: "overdue",
+        status: "Paid",
         total: 7000.99,
         items: [
           {
