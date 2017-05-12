@@ -3,11 +3,11 @@ import InvoiceForm from '../components/InvoiceForm'
 import * as actions from '../actions'
 
 const mapStateToProps = (state, ownProps) => {
-  let props = {invoice: null}
+  const props = { invoice: null }
   const pathParts = ownProps.location.pathname.split('/')
   if (pathParts[1] === 'edit') {
     const id = parseInt(pathParts[2], 10)
-    props.invoice = state.invoices.invoices.find((invoice) => invoice.id === id)
+    props.invoice = state.invoices.invoices.find(invoice => invoice.id === id)
   }
   return props
 }
@@ -20,12 +20,12 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   handleEditInvoice: (invoice) => {
     dispatch(actions.editInvoice(invoice))
     ownProps.history.push('/')
-  }
+  },
 })
 
 const InvoiceFormContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(InvoiceForm)
 
 export default InvoiceFormContainer

@@ -1,9 +1,7 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'
 
-import invoices from '../invoices';
+import invoices from '../invoices'
 
-const rootReducer = combineReducers({
-  invoices
-});
+const rootReducer = combineReducers({ invoices })
 
-export default rootReducer;
+export default rootReducer
