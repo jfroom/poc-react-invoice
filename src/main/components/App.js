@@ -1,19 +1,18 @@
+// @flow
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { withRouter } from 'react-router'
-
 import Header from './Header'
 import {
   Breadcrumb,
   InvoiceFormContainer,
   InvoiceListContainer,
 } from '../../invoices'
-
 import '../index.css'
 import '../../invoices/index.css'
 
 const App = () => {
-  const BreadcrumbWithRouter = withRouter(Breadcrumb)
+  const BreadcrumbWithRouter:Router = withRouter(Breadcrumb)
   return (
     <Router>
       <div>

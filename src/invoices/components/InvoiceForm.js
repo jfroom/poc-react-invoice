@@ -1,66 +1,103 @@
+// @flow
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import {
   Button, Table, FormGroup, ControlLabel, FormControl, Glyphicon,
 } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import NumberFormat from 'react-number-format'
-import { STATUS_TYPE } from '../constants'
+import { StatusTypes } from '../constants'
+import type { InvoiceItem, Invoice } from '../models'
 
-class InvoiceForm extends Component {
-  static sumLineItems(items) {
+type Props = {
+  invoice: Invoice,
+  handleAddInvoice: Function,
+  handleEditInvoice: Function,
+}
+type DefaultProps = {
+  invoice: Invoice,
+  handleAddInvoice: Function,
+  handleEditInvoice: Function,
+}
+type State = {
+  invoice: Invoice,
+}
+const emptyInvoice = (): Invoice => (
+  { id: -1, title: '', date: '', status: '', total: 0, notes: '', items: [] }
+)
+
+class InvoiceForm extends Component<DefaultProps, Props, State> {
+  static defaultProps = {
+    invoice: emptyInvoice(),
+    handleAddInvoice: () => {},
+    handleEditInvoice: () => {},
+  }
+  static sumLineItems(items: Array<InvoiceItem>) {
     return items.map(item => item.price).reduce((acc, val) => (acc + val), 0)
   }
-  constructor(props) {
+  constructor(props: Props) {
     super(props)
-    const invoiceEmpty = { title: '', status: '', total: 0, items: [] }
-    this.state = { invoice: props.invoice ? props.invoice : invoiceEmpty }
+    this.state = { invoice: props.invoice }
   }
-  handleStatusChange(status) {
+  state = { invoice: emptyInvoice() }
+
+  handleStatusChange(status: string) {
     this.setState({ invoice: { ...this.state.invoice, status } })
   }
   handleItemAdd() {
-    const textEl = document.querySelector('#lineitem-text')
-    const priceEl = document.querySelector('#lineitem-price')
-    const text = textEl.value
-    let price = parseFloat(priceEl.value.trim())
-    if (isNaN(price)) price = 0
+    // Parse items types & clear input elements
+    const textEl:?HTMLElement = document.querySelector('#lineitem-text')
+    if (!(textEl instanceof HTMLInputElement)) throw new Error('Expecting HTMLInputElement')
+    const text:string = textEl.value
     textEl.value = ''
+
+    const priceEl:?HTMLElement = document.querySelector('#lineitem-price')
+    if (!(priceEl instanceof HTMLInputElement)) throw new Error('Expecting HTMLInputElement')
+    let price:number = parseFloat(priceEl.value.trim())
+    if (isNaN(price)) price = 0
     priceEl.value = ''
 
-    const items = this.state.invoice.items.slice()
+    // Add items to state
+    const items: Array<InvoiceItem> = this.state.invoice.items.slice()
     items.push({ text, price })
     const total = InvoiceForm.sumLineItems(items)
     this.setState({ invoice: { ...this.state.invoice, items, total } })
   }
-  handleItemDelete(idx) {
-    const items = this.state.invoice.items.slice()
+  handleItemDelete(idx: number) {
+    const items: Array<InvoiceItem> = this.state.invoice.items.slice()
     items.splice(idx, 1)
     const total = InvoiceForm.sumLineItems(items)
     this.setState({ invoice: { ...this.state.invoice, items, total } })
   }
-  handleSubmit(event) {
+  handleSubmit(event: Event) {
     event.preventDefault()
-    const invoice = Object.assign(
-      {},
-      this.state.invoice,
-      {
-        id: this.state.invoice.id,
-        title: document.querySelector('#title').value,
-        date: document.querySelector('#date').value,
-        status: this.state.invoice.status,
-        notes: document.querySelector('#notes').value,
-      },
-    )
-    if (this.state.invoice.id) {
-      this.props.handleEditInvoice(invoice)
+    const { handleEditInvoice, handleAddInvoice } = this.props
+
+    const titleEl:?HTMLElement = document.querySelector('#title')
+    const dateEl:?HTMLElement = document.querySelector('#date')
+    const notesEl:?HTMLElement = document.querySelector('#notes')
+    if (!(titleEl instanceof HTMLInputElement)) throw new Error('Expecting HTMLInputElement')
+    if (!(dateEl instanceof HTMLInputElement)) throw new Error('Expecting HTMLInputElement')
+    if (!(notesEl instanceof HTMLTextAreaElement)) throw new Error('Expecting HTMLTextAreaElement')
+
+    const invoice = {
+      ...this.state.invoice,
+      id: this.state.invoice.id,
+      title: titleEl.value,
+      date: dateEl.value,
+      status: this.state.invoice.status,
+      notes: notesEl.value,
+    }
+
+    if (this.state.invoice.id > -1) {
+      handleEditInvoice(invoice)
     } else {
-      this.props.handleAddInvoice(invoice)
+      handleAddInvoice(invoice)
     }
   }
   render() {
+    const { invoice } = this.state
     const renderItems = () => (
-      this.state.invoice.items.map((item, idx) => (
+      invoice.items.map((item, idx) => (
         <tr key={idx}>
           <td>{item.text}</td>
           <td>
@@ -85,7 +122,7 @@ class InvoiceForm extends Component {
     )
     return (
       <div className="InvoiceForm">
-        <h1>{this.props.invoice ? 'Edit' : 'New'} Invoice</h1>
+        <h1>{invoice.id > -1 ? 'Edit' : 'New'} Invoice</h1>
         <hr />
         <form onSubmit={event => this.handleSubmit(event)}>
           <div className="row">
@@ -94,7 +131,7 @@ class InvoiceForm extends Component {
                 <ControlLabel>Title</ControlLabel>
                 <FormControl
                   type="text"
-                  defaultValue={this.state.invoice.title}
+                  defaultValue={invoice.title}
                   placeholder="Enter title"
                   onChange={() => {}}
                 />
@@ -106,7 +143,7 @@ class InvoiceForm extends Component {
                 <FormControl
                   type="text"
                   placeholder="Ex. 1/1/2017"
-                  defaultValue={this.state.invoice.date}
+                  defaultValue={invoice.date}
                   onChange={() => {}}
                 />
               </FormGroup>
@@ -116,11 +153,11 @@ class InvoiceForm extends Component {
                 <ControlLabel>Status</ControlLabel>
                 <FormControl
                   componentClass="select"
-                  value={this.state.invoice.status}
+                  value={invoice.status}
                   onChange={(event) => { this.handleStatusChange(event.target.value) }}
                 >
-                  <option value={STATUS_TYPE.UNPAID}>{STATUS_TYPE.UNPAID}</option>
-                  <option value={STATUS_TYPE.PAID}>{STATUS_TYPE.PAID}</option>
+                  <option value={StatusTypes.UNPAID}>{StatusTypes.UNPAID}</option>
+                  <option value={StatusTypes.PAID}>{StatusTypes.PAID}</option>
                 </FormControl>
               </FormGroup>
             </div>
@@ -175,7 +212,7 @@ class InvoiceForm extends Component {
             <ControlLabel>Total Due</ControlLabel>
             <FormControl.Static>
               <NumberFormat
-                value={this.state.invoice.total}
+                value={invoice.total}
                 displayType="text"
                 prefix="$"
                 thousandSeparator
@@ -188,7 +225,7 @@ class InvoiceForm extends Component {
             <ControlLabel>Notes</ControlLabel>
             <FormControl
               componentClass="textArea"
-              defaultValue={this.state.invoice.notes}
+              defaultValue={invoice.notes}
               placeholder="Enter notes"
               onChange={() => {}}
             />
@@ -206,23 +243,5 @@ class InvoiceForm extends Component {
     )
   }
 }
-
-InvoiceForm.propTypes = {
-  invoice: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    status: PropTypes.string.isRequired,
-    total: PropTypes.number.isRequired,
-    items: PropTypes.arrayOf(PropTypes.shape({
-      text: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-    }).isRequired).isRequired,
-    notes: PropTypes.text,
-  }),
-  handleAddInvoice: PropTypes.func.isRequired,
-  handleEditInvoice: PropTypes.func.isRequired,
-}
-InvoiceForm.defaultProps = { invoice: null }
 
 export default InvoiceForm

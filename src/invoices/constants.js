@@ -1,4 +1,6 @@
-export const STATUS_TYPE = { // eslint-disable-line
+// @flow
+export const StatusTypes = {
+  NONE: '',
   PAID: 'Paid',
   UNPAID: 'Unpaid',
 }

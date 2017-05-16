@@ -1,3 +1,4 @@
+// @flow
 import { connect } from 'react-redux'
 import InvoiceList from '../components/InvoiceList'
 import * as actions from '../actions'

@@ -3,9 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-eslint": "^7.2.3",
     "bootstrap": "3",
     "classnames": "^2.2.5",
     "eslint": "^3.19.0",
+    "eslint-plugin-flowtype": "^2.33.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^4.2.2",
     "eslint-watch": "^3.1.0",
     "prop-types": "^15.5.9",
     "react": "^15.5.4",
@@ -21,10 +25,11 @@
   },
   "devDependencies": {
     "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^7.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.0.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "flow-bin": "^0.46.0",
     "react-scripts": "0.9.5",
     "redux-devtools": "^3.4.0"
   },
@@ -33,6 +38,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "./node_modules/.bin/esw ./src --color -w --ext .js --ext .jsx"
+    "lint": "./node_modules/.bin/esw ./src --color -w --ext .js --ext .jsx",
+    "flow": "flow"
   }
 }

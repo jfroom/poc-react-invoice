@@ -1,9 +1,10 @@
+// @flow
 import { connect } from 'react-redux'
 import InvoiceForm from '../components/InvoiceForm'
 import * as actions from '../actions'
 
 const mapStateToProps = (state, ownProps) => {
-  const props = { invoice: null }
+  const props = {}
   const pathParts = ownProps.location.pathname.split('/')
   if (pathParts[1] === 'edit') {
     const id = parseInt(pathParts[2], 10)

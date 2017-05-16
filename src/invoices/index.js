@@ -1,3 +1,4 @@
+// @flow
 import reducer from './reducer'
 
 export { default as Breadcrumb } from './components/Breadcrumb'
