@@ -50,7 +50,5 @@ deploy:
   provider: pages
   local_dir: build
   skip_cleanup: true
-  github_token:
-    secure: "lLgSWHuNjf7sEEaSU3SQLq0zNroIoEqCUij/eZiBsRtG7t45rft/VuasNJwb7Dww7kfWmAJ9AHt//ZoqPUgUQyZFR5fNXEofDYPsdjFYyRImLwtdVXPIC+bJLZ9DRtJgw6/97UYtZLYqIbK219ujqt4GFGw4mtUjsx1y+PLBEV+rMRFj9yvIPXK6hpAf2uamI+d+5Aq8b07VSvOtuzwffLwAKSydd0GaEV3QD/edQ9W4NJdceJqGa8SVpkOeY7mFjCZuvHfi7XidsnAHpdb1foMZSLBkvh1qcKdwaz81KjzR7zX7Di3d+/+kRxcsu5/WCnb2lN3zXkJFOLPZaWQ1NM7cweaNeugr7TQID7KJB+ihm3qQAcZ/qiob/bzw+wPjYoOj0utn8Zs+XyCXrueYRpmSVb4tQkePNFfm0L6SUl39DGm97UB69tNyoWT/gW5nfoXlkyPigk4BUUt0WMFqrfdNuTnPHo6NS4DP1Y3s2h26eQs15i59EWuwd0XEZ5/FqU+d7TstcYEXAvQSSgvKTQsMMLq9d/caDdTsjU9/np9jZ2m1Oklsf3awp1+yFPICBV7c0Rzt8GcGrOj5PrlzpTnpy1E2Mo7TD0e0X1g/TtI+JqQnvwF7BXezmrtivNR++SZAL9U7nwsDjdzMcS14SpeFGntMN1VTHpWglD7zkdI="
   on:
     branch: master
