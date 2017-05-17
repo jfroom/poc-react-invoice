@@ -2,9 +2,8 @@
 
 Simple invoice proof-of-concept loosely based on [Seed Frontend Homework](https://github.com/seedco/frontend-homework).
 
-Demo: https://jfroom.github.io/poc-angular-invoice
+Demo: https://jfroom.github.io/poc-react-invoice
 
-![Demo animated gif](https://cloud.githubusercontent.com/assets/943108/24680649/9a204558-1946-11e7-8210-f8b8e4636114.gif)
 
 ## Technologies
 - [React](https://facebook.github.io/react)
@@ -17,7 +16,7 @@ Demo: https://jfroom.github.io/poc-angular-invoice
 - [Yarn](https://yarnpkg.com)
 - [React-Bootstrap](https://react-bootstrap.github.io/)
 - TravisCI integration with auto-deploy to GitHub Pages
-- [Nuclide](https://nuclide.io/) 
+- [Nuclide](https://nuclide.io/)
 
 # Getting Started
 
@@ -52,8 +51,9 @@ Demo: https://jfroom.github.io/poc-angular-invoice
 
 # Additional References
 - [Flow type cheat sheet](http://www.saltycrane.com/blog/2016/06/flow-type-cheat-sheet/)
-- [Three Rules For Structuring (Redux) Applications](https://jaysoo.ca/2016/02/28/organizing-redux-application/) by Jack Hsu
-- [TodoMVC example using Redux, React, and Typescript](https://github.com/jaysoo/todomvc-redux-react-typescript) by Jack Hsu
-- [Testing Redux Applications](http://randycoulman.com/blog/2016/03/15/testing-redux-applications/) by Randy Coulman
-- [Testing React components with Jest and Enzyme](https://hackernoon.com/testing-react-components-with-jest-and-enzyme-41d592c174f) by Artem Sapegin  
-
+- [Redux DevTools](https://github.com/gaearon/redux-devtools)
+- [Three Rules For Structuring (Redux) Applications](https://jaysoo.ca/2016/02/28/organizing-redux-application/)
+- [TodoMVC example using Redux, React, and Typescript](https://github.com/jaysoo/todomvc-redux-react-typescript)
+- [Testing Redux Applications](http://randycoulman.com/blog/2016/03/15/testing-redux-applications/)
+- [Host single page apps with GitHub Pages](https://github.com/rafrex/spa-github-pages)
+- [Testing React components with Jest and Enzyme](https://hackernoon.com/testing-react-components-with-jest-and-enzyme-41d592c174f)
