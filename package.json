@@ -36,8 +36,7 @@
     "jest-enzyme": "^2.0.0",
     "react-addons-test-utils": "15.4.2",
     "react-scripts": "0.9.5",
-    "redux-devtools": "^3.4.0",
-    "redux-mock-store": "^1.2.3"
+    "redux-devtools": "^3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
