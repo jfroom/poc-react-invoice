@@ -2,6 +2,7 @@
   "name": "poc-react-invoice",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jfroom.github.io/poc-react-invoice",
   "dependencies": {
     "babel-eslint": "^7.2.3",
     "bootstrap": "3",
@@ -31,6 +32,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "eslint-watch": "^3.1.0",
     "flow-bin": "^0.46.0",
+    "gh-pages": "^1.0.0",
     "jest-enzyme": "^2.0.0",
     "react-addons-test-utils": "15.4.2",
     "react-scripts": "0.9.5",
@@ -43,6 +45,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/esw ./src --color -w --ext .js --ext .jsx",
-    "flow": "flow"
+    "flow": "flow",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   }
 }
