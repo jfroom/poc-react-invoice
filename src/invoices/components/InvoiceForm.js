@@ -6,7 +6,6 @@ import {
 import { LinkContainer } from 'react-router-bootstrap'
 import { StatusTypes } from '../constants'
 import type { InvoiceItem, Invoice } from '../models'
-// $FlowFixMe -- 'numeral Required module not found' - but works fine! Flow bug?
 import numeral from 'numeral'
 
 export type Props = {

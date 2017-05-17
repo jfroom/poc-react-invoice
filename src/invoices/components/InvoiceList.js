@@ -5,7 +5,6 @@ import { LinkContainer } from 'react-router-bootstrap'
 import classnames from 'classnames'
 import { StatusTypes } from '../constants'
 import type { Invoice, History } from '../models'
-// $FlowFixMe -- 'numeral Required module not found' - but works fine! Flow bug?
 import numeral from 'numeral'
 
 class InvoiceList extends Component {
