@@ -13,8 +13,14 @@ import '../../invoices/index.css'
 
 const App = () => {
   const BreadcrumbWithRouter:Router = withRouter(Breadcrumb)
+
+  // For GitHub Pages (prod), assign basename
+  let basename = ''
+  if (/https?:\/\/.+github\.io/.test(window.location.origin)) {
+    basename = window.location.pathname.split('/')[1]
+  }
   return (
-    <Router>
+    <Router basename={basename}>
       <div>
         <Header />
         <div className="App container text-left">
