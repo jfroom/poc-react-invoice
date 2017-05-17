@@ -1,10 +1,8 @@
 // @flow
 import React, { Component } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
+import type { Location } from '../models'
 
-type Location = {
-  pathname: string
-}
 type BreadcrumbLink = {
   text: string,
   to?: string,

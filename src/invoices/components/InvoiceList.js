@@ -2,24 +2,27 @@
 import React, { Component } from 'react'
 import { Button, Table, Glyphicon, FormGroup, ControlLabel, FormControl } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
-import NumberFormat from 'react-number-format'
 import classnames from 'classnames'
 import { StatusTypes } from '../constants'
-import type { Invoice } from '../models'
+import type { Invoice, History } from '../models'
+// $FlowFixMe -- 'numeral Required module not found' - but works fine! Flow bug?
+import numeral from 'numeral'
 
 class InvoiceList extends Component {
   static defaultProps = {
-    statusFilter: StatusTypes.PAID,
-    handleDeleteInvoice: 1,
+    invoices: [],
+    statusFilter: StatusTypes.PAID
   }
   props: {
       statusFilter: $Keys<typeof StatusTypes>,
       invoices: Array<Invoice>,
       handleDeleteInvoice: Function,
-      handleChangeStatusFilter: Function
+      handleChangeStatusFilter: Function,
+      history: History
   }
   render() {
     const { invoices, statusFilter, handleDeleteInvoice, handleChangeStatusFilter } = this.props
+    const total:number = invoices.reduce((acc, invoice) => (acc + invoice.total), 0)
 
     const getInvoiceRow = (invoice) => {
       const mailSubject = encodeURI(`Invoice: ${invoice.title}`)
@@ -29,29 +32,57 @@ class InvoiceList extends Component {
       const overdue =
         invoice.status === StatusTypes.UNPAID && new Date(invoice.date) - new Date() <= 0
       const rowClass = classnames({ overdue })
+      const editURL = `/edit/${invoice.id}`
+
+      const stopPropagation = (e: SyntheticMouseEvent) => {
+        if (e) { // Tests don't actually send an event
+          e.stopPropagation()
+        }
+      }
 
       return (
-        <tr key={invoice.id} className={rowClass}>
+        <tr
+          key={invoice.id}
+          className={rowClass}
+          onClick={() => this.props.history.push(editURL) }
+          >
           <td>{invoice.date}</td>
           <td>{invoice.title}</td>
-          <td>
-            <NumberFormat
-              value={invoice.total}
-              displayType="text"
-              prefix="$"
-              thousandSeparator
-              decimalPrecision
-            />
-          </td>
+          <td>{numeral(invoice.total).format('$0,0.00')}</td>
           <td className="status">{invoice.status}</td>
           <td>
-            <a target="blank" href={mailTo}>
-              <Button className="btn-xs btn-info"><Glyphicon glyph="envelope" /></Button>
+
+            {/* EDIT BUTTON */}
+            <Button
+              className="btn-xs btn-primary"
+              onClick={(e: SyntheticMouseEvent) => {
+                stopPropagation(e) // Prevent row click
+                this.props.history.push(editURL)
+              }}
+            >
+              <Glyphicon glyph="pencil" />
+            </Button>
+
+            {/* MAIL BUTTON */}
+            <a
+              target="_blank"
+              rel='noopener noreferrer'
+              href={mailTo}
+              onClick={(e: SyntheticMouseEvent) => stopPropagation(e)} // Prevent row click
+            >
+              <Button className="btn-xs btn-info">
+                <Glyphicon glyph="envelope" />
+              </Button>
             </a>
-            <LinkContainer to={`/edit/${invoice.id}`} className="btn-xs btn-primary">
-              <Button><Glyphicon glyph="pencil" /></Button>
-            </LinkContainer>
-            <Button className="btn-xs btn-danger" onClick={() => handleDeleteInvoice(invoice.id)}>
+
+            {/* DELETE BUTTON */}
+            <Button
+              className="btn-xs btn-danger btn-delete"
+              onClick={(e: SyntheticMouseEvent) => {
+                stopPropagation(e) // Prevent row click
+                handleDeleteInvoice(invoice.id)
+              }}
+            >
               <Glyphicon glyph="trash" />
             </Button>
           </td>
@@ -72,18 +103,19 @@ class InvoiceList extends Component {
             </LinkContainer>
           </div>
           <div className="col-sm-3">
-            <FormGroup controlId="status-filter" validationState={null}>
-              <ControlLabel>Status Filter</ControlLabel>
-              <FormControl
-                componentClass="select"
-                value={statusFilter}
+            <div className="form-group">
+              <label className="control-label">Status Filter</label>
+              <select
+                id="status-filter"
+                className="form-control"
                 onChange={(event) => { handleChangeStatusFilter(event.target.value) }}
+                value={statusFilter}
               >
-                <option value="">View All</option>
+                <option value={StatusTypes.NONE}>View All</option>
                 <option value={StatusTypes.UNPAID}>{StatusTypes.UNPAID}</option>
                 <option value={StatusTypes.PAID}>{StatusTypes.PAID}</option>
-              </FormControl>
-            </FormGroup>
+              </select>
+            </div>
           </div>
         </div>
 
@@ -101,6 +133,12 @@ class InvoiceList extends Component {
             {invoices.map(invoice => getInvoiceRow(invoice))}
           </tbody>
         </Table>
+        <FormGroup controlId="total">
+          <ControlLabel>Grand Total</ControlLabel>
+          <FormControl.Static>
+            {numeral(total).format('$0,0.00')}
+          </FormControl.Static>
+        </FormGroup>
       </div>
     )
   }

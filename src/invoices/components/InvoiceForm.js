@@ -4,14 +4,15 @@ import {
   Button, Table, FormGroup, ControlLabel, FormControl, Glyphicon,
 } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
-import NumberFormat from 'react-number-format'
 import { StatusTypes } from '../constants'
 import type { InvoiceItem, Invoice } from '../models'
+// $FlowFixMe -- 'numeral Required module not found' - but works fine! Flow bug?
+import numeral from 'numeral'
 
-type Props = {
+export type Props = {
   invoice: Invoice,
   handleAddInvoice: Function,
-  handleEditInvoice: Function,
+  handleEditInvoice: Function
 }
 type DefaultProps = {
   invoice: Invoice,
@@ -20,9 +21,12 @@ type DefaultProps = {
 }
 type State = {
   invoice: Invoice,
+  lineItemText: string,
+  lineItemPrice: string
 }
+
 const emptyInvoice = (): Invoice => (
-  { id: -1, title: '', date: '', status: '', total: 0, notes: '', items: [] }
+  { id: -1, title: '', date: '', status: StatusTypes.UNPAID, total: 0, notes: '', items: [] }
 )
 
 class InvoiceForm extends Component<DefaultProps, Props, State> {
@@ -32,35 +36,51 @@ class InvoiceForm extends Component<DefaultProps, Props, State> {
     handleEditInvoice: () => {},
   }
   static sumLineItems(items: Array<InvoiceItem>) {
-    return items.map(item => item.price).reduce((acc, val) => (acc + val), 0)
+    return items.reduce((acc, item) => (acc + item.price), 0)
   }
   constructor(props: Props) {
     super(props)
-    this.state = { invoice: props.invoice }
-  }
-  state = { invoice: emptyInvoice() }
+    this.state = { ...this.state, invoice: props.invoice }
 
-  handleStatusChange(status: string) {
-    this.setState({ invoice: { ...this.state.invoice, status } })
+    const self: any = this
+    self.handleChange = this.handleChange.bind(this)
+    self.handleSubmit = this.handleSubmit.bind(this)
+    self.handleItemAdd = this.handleItemAdd.bind(this)
+  }
+  state = { invoice: emptyInvoice(), lineItemText: '', lineItemPrice: '' }
+
+  handleChange(event: SyntheticInputEvent) {
+    const target:any = event.currentTarget
+
+    // Intermediate line item inputs go into state directly
+    if (['lineItemText', 'lineItemPrice'].includes(target.id)) {
+      this.setState({ [target.id]: target.value })
+    } else {
+      // Invoice title, status, etc. go into invoice item
+      this.setState({
+        invoice: {
+          ...this.state.invoice,
+          [target.id]: target.value
+        }
+      })
+    }
   }
   handleItemAdd() {
-    // Parse items types & clear input elements
-    const textEl:?HTMLElement = document.querySelector('#lineitem-text')
-    if (!(textEl instanceof HTMLInputElement)) throw new Error('Expecting HTMLInputElement')
-    const text:string = textEl.value
-    textEl.value = ''
-
-    const priceEl:?HTMLElement = document.querySelector('#lineitem-price')
-    if (!(priceEl instanceof HTMLInputElement)) throw new Error('Expecting HTMLInputElement')
-    let price:number = parseFloat(priceEl.value.trim())
+    let price:number = parseFloat(this.state.lineItemPrice.trim())
     if (isNaN(price)) price = 0
-    priceEl.value = ''
 
     // Add items to state
     const items: Array<InvoiceItem> = this.state.invoice.items.slice()
-    items.push({ text, price })
+    items.push({
+      text: this.state.lineItemText,
+      price
+    })
     const total = InvoiceForm.sumLineItems(items)
-    this.setState({ invoice: { ...this.state.invoice, items, total } })
+    this.setState({
+      invoice: { ...this.state.invoice, items, total },
+      lineItemText: '',
+      lineItemPrice: ''
+    })
   }
   handleItemDelete(idx: number) {
     const items: Array<InvoiceItem> = this.state.invoice.items.slice()
@@ -69,26 +89,10 @@ class InvoiceForm extends Component<DefaultProps, Props, State> {
     this.setState({ invoice: { ...this.state.invoice, items, total } })
   }
   handleSubmit(event: Event) {
-    event.preventDefault()
+    event.preventDefault() // Don't actually try to submit form to page
     const { handleEditInvoice, handleAddInvoice } = this.props
-
-    const titleEl:?HTMLElement = document.querySelector('#title')
-    const dateEl:?HTMLElement = document.querySelector('#date')
-    const notesEl:?HTMLElement = document.querySelector('#notes')
-    if (!(titleEl instanceof HTMLInputElement)) throw new Error('Expecting HTMLInputElement')
-    if (!(dateEl instanceof HTMLInputElement)) throw new Error('Expecting HTMLInputElement')
-    if (!(notesEl instanceof HTMLTextAreaElement)) throw new Error('Expecting HTMLTextAreaElement')
-
-    const invoice = {
-      ...this.state.invoice,
-      id: this.state.invoice.id,
-      title: titleEl.value,
-      date: dateEl.value,
-      status: this.state.invoice.status,
-      notes: notesEl.value,
-    }
-
-    if (this.state.invoice.id > -1) {
+    const invoice = this.state.invoice
+    if (invoice.id > -1) {
       handleEditInvoice(invoice)
     } else {
       handleAddInvoice(invoice)
@@ -100,18 +104,10 @@ class InvoiceForm extends Component<DefaultProps, Props, State> {
       invoice.items.map((item, idx) => (
         <tr key={idx}>
           <td>{item.text}</td>
-          <td>
-            <NumberFormat
-              value={item.price}
-              displayType="text"
-              prefix="$"
-              thousandSeparator
-              decimalPrecision
-            />
-          </td>
+          <td>{numeral(item.price).format('$0,0.00')}</td>
           <td>
             <Button
-              className="btn-xs btn-danger"
+              className="btn-xs btn-danger btn-delete-item"
               onClick={() => this.handleItemDelete(idx)}
             >
               <Glyphicon glyph="trash" />
@@ -124,16 +120,16 @@ class InvoiceForm extends Component<DefaultProps, Props, State> {
       <div className="InvoiceForm">
         <h1>{invoice.id > -1 ? 'Edit' : 'New'} Invoice</h1>
         <hr />
-        <form onSubmit={event => this.handleSubmit(event)}>
+        <form id="form" onSubmit={this.handleSubmit}>
           <div className="row">
             <div className="col-sm-8">
               <FormGroup controlId="title">
                 <ControlLabel>Title</ControlLabel>
                 <FormControl
                   type="text"
-                  defaultValue={invoice.title}
+                  value={invoice.title}
                   placeholder="Enter title"
-                  onChange={() => {}}
+                  onChange={this.handleChange}
                 />
               </FormGroup>
             </div>
@@ -143,8 +139,8 @@ class InvoiceForm extends Component<DefaultProps, Props, State> {
                 <FormControl
                   type="text"
                   placeholder="Ex. 1/1/2017"
-                  defaultValue={invoice.date}
-                  onChange={() => {}}
+                  value={invoice.date}
+                  onChange={this.handleChange}
                 />
               </FormGroup>
             </div>
@@ -154,7 +150,7 @@ class InvoiceForm extends Component<DefaultProps, Props, State> {
                 <FormControl
                   componentClass="select"
                   value={invoice.status}
-                  onChange={(event) => { this.handleStatusChange(event.target.value) }}
+                  onChange={this.handleChange}
                 >
                   <option value={StatusTypes.UNPAID}>{StatusTypes.UNPAID}</option>
                   <option value={StatusTypes.PAID}>{StatusTypes.PAID}</option>
@@ -178,26 +174,34 @@ class InvoiceForm extends Component<DefaultProps, Props, State> {
                   {renderItems()}
                   <tr>
                     <td>
-                      <FormGroup controlId="lineitem-text">
-                        <FormControl type="text" defaultValue="" placeholder="Enter line item" />
+                      <FormGroup controlId="lineItemText">
+                        <FormControl
+                          type="text"
+                          value={this.state.lineItemText}
+                          placeholder="Enter line item"
+                          id="lineItemText"
+                          onChange={this.handleChange}
+                        />
                       </FormGroup>
                     </td>
                     <td>
-                      <FormGroup controlId="lineitem-price">
+                      <FormGroup controlId="lineItemPrice">
                         <FormControl
                           type="number"
                           step="any"
                           min="0"
-                          defaultValue=""
+                          value={this.state.lineItemPrice}
                           placeholder="Enter price"
+                          onChange={this.handleChange}
                         />
                       </FormGroup>
                     </td>
                     <td>
                       <Button
+                        id="add-item-btn"
                         className="btn-xs
                         btn-success"
-                        onClick={() => { this.handleItemAdd() }}
+                        onClick={this.handleItemAdd}
                       >
                         <Glyphicon glyph="plus" /> Add
                       </Button>
@@ -211,13 +215,7 @@ class InvoiceForm extends Component<DefaultProps, Props, State> {
           <FormGroup controlId="total">
             <ControlLabel>Total Due</ControlLabel>
             <FormControl.Static>
-              <NumberFormat
-                value={invoice.total}
-                displayType="text"
-                prefix="$"
-                thousandSeparator
-                decimalPrecision
-              />
+              {numeral(invoice.total).format('$0,0.00')}
             </FormControl.Static>
           </FormGroup>
 
@@ -225,9 +223,9 @@ class InvoiceForm extends Component<DefaultProps, Props, State> {
             <ControlLabel>Notes</ControlLabel>
             <FormControl
               componentClass="textArea"
-              defaultValue={invoice.notes}
+              value={invoice.notes}
               placeholder="Enter notes"
-              onChange={() => {}}
+              onChange={ this.handleChange}
             />
           </FormGroup>
 
@@ -235,7 +233,7 @@ class InvoiceForm extends Component<DefaultProps, Props, State> {
             <LinkContainer to="/" className="btn-default btn-lg" exact>
               <Button>Cancel</Button>
             </LinkContainer>
-            <Button type="submit" className="btn-success btn-lg">Save</Button>
+            <Button type="submit" id="submit" className="btn-success btn-lg">Save</Button>
           </div>
         </form>
         <p />

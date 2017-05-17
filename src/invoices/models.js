@@ -12,6 +12,13 @@ export type Invoice = {
   notes: string,
   items: Array<InvoiceItem>,
 }
+export type Location = {
+  pathname: string
+}
+export type History = {
+  location: Location,
+  push: Function
+}
 export type State = {
   +nextId: number,
   +invoices: Array<Invoice>

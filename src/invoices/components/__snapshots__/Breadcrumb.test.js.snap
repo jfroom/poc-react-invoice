@@ -1,0 +1,178 @@
+exports[`test Invoices / Edit Invoice 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": undefined,
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }>
+    <Breadcrumb
+      location={
+        Object {
+          "pathname": "/edit/1",
+        }
+      }>
+      <div>
+        <ol
+          className="breadcrumb">
+          <li>
+            <LinkContainer
+              activeClassName="active"
+              exact={false}
+              isActive={[Function]}
+              replace={false}
+              strict={false}
+              to="/">
+              <Route
+                exact={false}
+                path="/"
+                strict={false}>
+                <a
+                  className=" active"
+                  href="/"
+                  onClick={[Function]}
+                  style={Object {}}>
+                  Invoices
+                </a>
+              </Route>
+            </LinkContainer>
+          </li>
+          <li>
+            <span>
+              edit Invoice
+            </span>
+          </li>
+        </ol>
+      </div>
+    </Breadcrumb>
+  </Router>
+</BrowserRouter>
+`;
+
+exports[`test Invoices / New Invoice 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": undefined,
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }>
+    <Breadcrumb
+      location={
+        Object {
+          "pathname": "/new",
+        }
+      }>
+      <div>
+        <ol
+          className="breadcrumb">
+          <li>
+            <LinkContainer
+              activeClassName="active"
+              exact={false}
+              isActive={[Function]}
+              replace={false}
+              strict={false}
+              to="/">
+              <Route
+                exact={false}
+                path="/"
+                strict={false}>
+                <a
+                  className=" active"
+                  href="/"
+                  onClick={[Function]}
+                  style={Object {}}>
+                  Invoices
+                </a>
+              </Route>
+            </LinkContainer>
+          </li>
+          <li>
+            <span>
+              new Invoice
+            </span>
+          </li>
+        </ol>
+      </div>
+    </Breadcrumb>
+  </Router>
+</BrowserRouter>
+`;
+
+exports[`test Invoices 1`] = `
+<BrowserRouter>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": undefined,
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }>
+    <Breadcrumb
+      location={
+        Object {
+          "pathname": "/",
+        }
+      }>
+      <div>
+        <ol
+          className="breadcrumb">
+          <li>
+            <span>
+              Invoices
+            </span>
+          </li>
+        </ol>
+      </div>
+    </Breadcrumb>
+  </Router>
+</BrowserRouter>
+`;

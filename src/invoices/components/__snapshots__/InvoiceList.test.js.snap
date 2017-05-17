@@ -1,0 +1,392 @@
+exports[`test empty 1`] = `
+<div>
+  <h1>
+    Invoices
+  </h1>
+  <hr />
+  <div
+    className="row">
+    <div
+      className="col-sm-9">
+      <LinkContainer
+        activeClassName="active"
+        exact={false}
+        replace={false}
+        strict={false}
+        to="/new">
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsSize="large"
+          bsStyle="success"
+          disabled={false}>
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="plus" />
+           
+           New Invoice
+        </Button>
+      </LinkContainer>
+    </div>
+    <div
+      className="col-sm-3">
+      <div
+        className="form-group">
+        <label
+          className="control-label">
+          Status Filter
+        </label>
+        <select
+          className="form-control"
+          id="status-filter"
+          onChange={[Function]}
+          value="Paid">
+          <option
+            value="">
+            View All
+          </option>
+          <option
+            value="Unpaid">
+            Unpaid
+          </option>
+          <option
+            value="Paid">
+            Paid
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <Table
+    bordered={false}
+    bsClass="table"
+    className="invoice-list"
+    condensed={true}
+    hover={true}
+    responsive={false}
+    striped={false}>
+    <thead>
+      <tr>
+        <th>
+          Due Date
+        </th>
+        <th>
+          Title
+        </th>
+        <th>
+          Total
+        </th>
+        <th>
+          Status
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </Table>
+  <FormGroup
+    bsClass="form-group"
+    controlId="total">
+    <ControlLabel
+      bsClass="control-label"
+      srOnly={false}>
+      Grand Total
+    </ControlLabel>
+    <FormControlStatic
+      bsClass="form-control-static"
+      componentClass="p">
+      $0.00
+    </FormControlStatic>
+  </FormGroup>
+</div>
+`;
+
+exports[`test full list with delete & status filter mocks 1`] = `
+<div>
+  <h1>
+    Invoices
+  </h1>
+  <hr />
+  <div
+    className="row">
+    <div
+      className="col-sm-9">
+      <LinkContainer
+        activeClassName="active"
+        exact={false}
+        replace={false}
+        strict={false}
+        to="/new">
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsSize="large"
+          bsStyle="success"
+          disabled={false}>
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="plus" />
+           
+           New Invoice
+        </Button>
+      </LinkContainer>
+    </div>
+    <div
+      className="col-sm-3">
+      <div
+        className="form-group">
+        <label
+          className="control-label">
+          Status Filter
+        </label>
+        <select
+          className="form-control"
+          id="status-filter"
+          onChange={[Function]}
+          value="Paid">
+          <option
+            value="">
+            View All
+          </option>
+          <option
+            value="Unpaid">
+            Unpaid
+          </option>
+          <option
+            value="Paid">
+            Paid
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <Table
+    bordered={false}
+    bsClass="table"
+    className="invoice-list"
+    condensed={true}
+    hover={true}
+    responsive={false}
+    striped={false}>
+    <thead>
+      <tr>
+        <th>
+          Due Date
+        </th>
+        <th>
+          Title
+        </th>
+        <th>
+          Total
+        </th>
+        <th>
+          Status
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        className=""
+        onClick={[Function]}>
+        <td>
+          1/1/2020
+        </td>
+        <td>
+          Hoyt Residence Kitchen Remodel
+        </td>
+        <td>
+          $7,000.00
+        </td>
+        <td
+          className="status">
+          Unpaid
+        </td>
+        <td>
+          <Button
+            active={false}
+            block={false}
+            bsClass="btn"
+            bsStyle="default"
+            className="btn-xs btn-primary"
+            disabled={false}
+            onClick={[Function]}>
+            <Glyphicon
+              bsClass="glyphicon"
+              glyph="pencil" />
+          </Button>
+          <a
+            href="mailto:?subject=Invoice:%20Hoyt%20Residence%20Kitchen%20Remodel&body=Please view your invoice at this web page: http://example.com/invoices/1"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank">
+            <Button
+              active={false}
+              block={false}
+              bsClass="btn"
+              bsStyle="default"
+              className="btn-xs btn-info"
+              disabled={false}>
+              <Glyphicon
+                bsClass="glyphicon"
+                glyph="envelope" />
+            </Button>
+          </a>
+          <Button
+            active={false}
+            block={false}
+            bsClass="btn"
+            bsStyle="default"
+            className="btn-xs btn-danger btn-delete"
+            disabled={false}
+            onClick={[Function]}>
+            <Glyphicon
+              bsClass="glyphicon"
+              glyph="trash" />
+          </Button>
+        </td>
+      </tr>
+      <tr
+        className=""
+        onClick={[Function]}>
+        <td>
+          5/1/2017
+        </td>
+        <td>
+          Lovejoy Residence Bathroom Remodel
+        </td>
+        <td>
+          $3,000.99
+        </td>
+        <td
+          className="status">
+          Paid
+        </td>
+        <td>
+          <Button
+            active={false}
+            block={false}
+            bsClass="btn"
+            bsStyle="default"
+            className="btn-xs btn-primary"
+            disabled={false}
+            onClick={[Function]}>
+            <Glyphicon
+              bsClass="glyphicon"
+              glyph="pencil" />
+          </Button>
+          <a
+            href="mailto:?subject=Invoice:%20Lovejoy%20Residence%20Bathroom%20Remodel&body=Please view your invoice at this web page: http://example.com/invoices/2"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank">
+            <Button
+              active={false}
+              block={false}
+              bsClass="btn"
+              bsStyle="default"
+              className="btn-xs btn-info"
+              disabled={false}>
+              <Glyphicon
+                bsClass="glyphicon"
+                glyph="envelope" />
+            </Button>
+          </a>
+          <Button
+            active={false}
+            block={false}
+            bsClass="btn"
+            bsStyle="default"
+            className="btn-xs btn-danger btn-delete"
+            disabled={false}
+            onClick={[Function]}>
+            <Glyphicon
+              bsClass="glyphicon"
+              glyph="trash" />
+          </Button>
+        </td>
+      </tr>
+      <tr
+        className="overdue"
+        onClick={[Function]}>
+        <td>
+          5/10/2017
+        </td>
+        <td>
+          Glisan Residence Living Room Remodel
+        </td>
+        <td>
+          $3,090.99
+        </td>
+        <td
+          className="status">
+          Unpaid
+        </td>
+        <td>
+          <Button
+            active={false}
+            block={false}
+            bsClass="btn"
+            bsStyle="default"
+            className="btn-xs btn-primary"
+            disabled={false}
+            onClick={[Function]}>
+            <Glyphicon
+              bsClass="glyphicon"
+              glyph="pencil" />
+          </Button>
+          <a
+            href="mailto:?subject=Invoice:%20Glisan%20Residence%20Living%20Room%20Remodel&body=Please view your invoice at this web page: http://example.com/invoices/3"
+            onClick={[Function]}
+            rel="noopener noreferrer"
+            target="_blank">
+            <Button
+              active={false}
+              block={false}
+              bsClass="btn"
+              bsStyle="default"
+              className="btn-xs btn-info"
+              disabled={false}>
+              <Glyphicon
+                bsClass="glyphicon"
+                glyph="envelope" />
+            </Button>
+          </a>
+          <Button
+            active={false}
+            block={false}
+            bsClass="btn"
+            bsStyle="default"
+            className="btn-xs btn-danger btn-delete"
+            disabled={false}
+            onClick={[Function]}>
+            <Glyphicon
+              bsClass="glyphicon"
+              glyph="trash" />
+          </Button>
+        </td>
+      </tr>
+    </tbody>
+  </Table>
+  <FormGroup
+    bsClass="form-group"
+    controlId="total">
+    <ControlLabel
+      bsClass="control-label"
+      srOnly={false}>
+      Grand Total
+    </ControlLabel>
+    <FormControlStatic
+      bsClass="form-control-static"
+      componentClass="p">
+      $13,091.98
+    </FormControlStatic>
+  </FormGroup>
+</div>
+`;

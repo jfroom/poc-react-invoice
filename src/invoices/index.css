@@ -1,6 +1,7 @@
 /* Prefix with .App to give precedence over bootstrap styles */
 .invoice-list td {
   width: 10%;
+  cursor: pointer;
 }
 .invoice-list td:nth-child(2){
   width: 50%;

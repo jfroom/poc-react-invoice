@@ -1,0 +1,21 @@
+exports[`test renders without crashing 1`] = `
+<BrowserRouter>
+  <div>
+    <Header />
+    <div
+      className="App container text-left">
+      <withRouter(Breadcrumb) />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/" />
+      <Route
+        component={[Function]}
+        path="/new" />
+      <Route
+        component={[Function]}
+        path="/edit" />
+    </div>
+  </div>
+</BrowserRouter>
+`;

@@ -25,7 +25,7 @@ const initialState = {
         title: 'Lovejoy Residence Bathroom Remodel',
         date: '5/1/2017',
         status: 'Paid',
-        total: 7000.99,
+        total: 3000.99,
         items: [
           {
             text: 'Soaker tub',
@@ -43,7 +43,7 @@ const initialState = {
         title: 'Glisan Residence Living Room Remodel',
         date: '5/10/2017',
         status: 'Unpaid',
-        total: 7090.99,
+        total: 3090.99,
         items: [
           {
             text: 'Hardwood Floors',

@@ -1,15 +1,19 @@
 // @flow
 import { connect } from 'react-redux'
 import InvoiceList from '../components/InvoiceList'
-import * as actions from '../actions'
+import { actions } from '../actions'
+import { StatusTypes } from '../constants'
+import type { State as MainState } from '../../main/models'
+import type { State as InvoiceState } from '../models'
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (mainState: MainState) => {
+  const state:InvoiceState = mainState.invoices
   const props = {
-    invoices: state.invoices.invoices.slice(),
-    statusFilter: state.invoices.statusFilter,
+    invoices: state.invoices.slice(),
+    statusFilter: state.statusFilter || StatusTypes.NONE,
   }
   // Filter status
-  if (props.statusFilter && props.statusFilter !== '') {
+  if (props.statusFilter !== StatusTypes.NONE) {
     props.invoices = props.invoices.filter(invoice => (invoice.status === props.statusFilter))
   }
   // Sort date
@@ -17,11 +21,11 @@ const mapStateToProps = (state) => {
   return props
 }
 
-const mapDispatchToProps = dispatch => ({
-  handleDeleteInvoice: (id) => {
+export const mapDispatchToProps = (dispatch: Function) => ({
+  handleDeleteInvoice: (id: number) => {
     dispatch(actions.deleteInvoice(id))
   },
-  handleChangeStatusFilter: (status) => {
+  handleChangeStatusFilter: (status: string) => {
     dispatch(actions.changeStatusFilter(status))
   },
 })
