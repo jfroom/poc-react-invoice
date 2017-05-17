@@ -1,8 +1,10 @@
 # poc-react-invoice [![Build Status](https://travis-ci.org/jfroom/poc-react-invoice.svg?branch=master)](https://travis-ci.org/jfroom/poc-react-invoice)
 
-Simple React based Invoice SPA proof-of-concept. Loosely based on [Seed Frontend Homework](https://github.com/seedco/frontend-homework).
+Simple React/Redux/Flow based Invoice SPA proof-of-concept. Loosely based on [Seed Frontend Homework](https://github.com/seedco/frontend-homework).
 
 Demo: https://jfroom.github.io/poc-react-invoice
+
+![Demo image](https://cloud.githubusercontent.com/assets/943108/26180415/45f50b7c-3b1e-11e7-9ab0-e2b3fc753f3e.png)
 
 
 ## Technologies
