@@ -17,7 +17,7 @@ const App = () => {
   // For GitHub Pages (prod), assign basename
   let basename = ''
   if (/https?:\/\/.+github\.io/.test(window.location.origin)) {
-    basename = window.location.pathname.split('/')[1]
+    basename = '/' + window.location.pathname.split('/')[1]
   }
   return (
     <Router basename={basename}>
