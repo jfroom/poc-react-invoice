@@ -11,14 +11,15 @@ Demo: https://jfroom.github.io/poc-react-invoice
 - [React](https://facebook.github.io/react)
 - [Redux](http://redux.js.org/) & [React Router](https://reacttraining.com/react-router/)
 - [Flow](https://flow.org/) static type checking
+- Testing with [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/)
+- [Nuclide](https://nuclide.io/) & [Redux DevTools](https://github.com/gaearon/redux-devtools)
 - [Docker](https://docs.docker.com/) with [Compose](https://docs.docker.com/compose/)
 - Scaffolded with [Create React App](https://github.com/facebookincubator/create-react-app) which leverages [Babel](https://babeljs.io/) and [webpack](https://webpack.js.org)
 - [ESLint](http://eslint.org/) with [watch](https://github.com/rizowski/eslint-watch)
-- Testing with [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/)
 - [Yarn](https://yarnpkg.com)
 - [React-Bootstrap](https://react-bootstrap.github.io/)
 - TravisCI integration with auto-deploy to GitHub Pages
-- [Nuclide](https://nuclide.io/) & [Redux DevTools](https://github.com/gaearon/redux-devtools)
+
 
 # Getting Started
 
