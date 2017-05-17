@@ -1,0 +1,56 @@
+language: node_js
+node_js:
+  - "7"
+
+services:
+  - docker
+
+env:
+  global:
+    - DOCKER_VERSION=17.03.0~ce-0~ubuntu-trusty
+    - DOCKER_COMPOSE_VERSION=1.11.2
+
+before_install:
+  - # Once travis pre-installs newer versions of docker & docker compose, the following can be removed
+  - # However, saves a lot of complexity by starting with their docker services configured & then calling these updates.
+  - docker -v
+  - docker-compose -v
+  - # List docker-engine versions
+  - apt-cache madison docker-engine
+  - # Update docker
+  - sudo apt-get install docker-engine=${DOCKER_VERSION}
+  - docker -v
+  - docker-compose -v
+
+  - # Update docker compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - docker-compose -v
+
+install:
+  - docker-compose build
+  - docker-compose run --rm --no-deps web echo 'Dependencies now installed.'
+  - # Use 'run ...` instead of 'exec ...` so that entrypoint's customized bundle install runs completely.
+
+before_script:
+  - docker-compose up -d
+  - # The detached `up` also runs entrypoint — but because it's detached,
+  - # bundle install doesn't finish before shell moves on to next commands.
+  - docker ps
+
+script:
+  - docker-compose run -e CI=true web yarn test
+  - docker-compose exec web yarn build
+
+after_script:
+  - docker-compose down
+
+deploy:
+  provider: pages
+  local_dir: build
+  skip_cleanup: true
+  github_token:
+    secure: "hXwC0EPdbMKXJbXQHAyENEJFcSotdei7gNqI/+zs2L7xScpG8Tbzvm99no0GudQNRj6NYAhezDjfJsDfdnOWTQaAWjN5NvB1TUKHx0DOaLKqmYh5GNF+Kq6qbjrcIUXXw46VlKnfT9Epwtw8ydDzWkOe4HpgUSE5GEQKlK9W0rOPravyvmEOstKI/tarFfGKPRPoJnTOdwKnuhwjkYuSL4jrC0K5DYr1R4RV02mcKH7A8/4RWCLZiFOIcSpnOVOvPMcE0i78cdZIvz4OGGA3Gmi82ODJSg/wm07KTDw25jys273l6M73Jl76uus8ajWvQPjPH3y8eLWpAivzPEvQrpjcmEIKjh+AlVMh4FolVaW2WjPxVF+eq84dktaMhZ1baFWIvdlZ9JibEx+hUsZ+zbrIonAOzZYqfTZMYPEyqZmEDfYMX3POrxhS9hVxHZLR2bxo7n5ETpkjKhXL4e19VMmznKXHGGIoOu3MJZ1r5SOp0/xNqrMKPNdmKYiWkaE6aR0Wl70WGziJD9DkFFsqK5Ubv7I0MlraK1oAldxFIOsDsdLdz4v2BG50Gml6oya0F7SmVNyWnEmsNkIaBTVVEkrcyi/fmMVLslvBGRlKxIgddShPgczljZe3OlVca8iYFXn7M8bdEAzvUiXdPUj3Qt4QQo2WsOS+fiDje5wO0x0="
+  on:
+    branch: master
