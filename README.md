@@ -1,6 +1,6 @@
-# POC-React-Invoice [![Build Status](https://travis-ci.org/jfroom/poc-react-invoice.svg?branch=master)](https://travis-ci.org/jfroom/poc-react-invoice)
+# poc-react-invoice [![Build Status](https://travis-ci.org/jfroom/poc-react-invoice.svg?branch=master)](https://travis-ci.org/jfroom/poc-react-invoice)
 
-Simple invoice proof-of-concept loosely based on [Seed Frontend Homework](https://github.com/seedco/frontend-homework).
+Simple React based Invoice SPA proof-of-concept. Loosely based on [Seed Frontend Homework](https://github.com/seedco/frontend-homework).
 
 Demo: https://jfroom.github.io/poc-react-invoice
 
@@ -40,9 +40,6 @@ Demo: https://jfroom.github.io/poc-react-invoice
 
 ## Test
 `docker-compose exec web yarn test` Run test suite, stays open with watch.
-
-![Jest test results](https://cloud.githubusercontent.com/assets/943108/24680654/9c5de0e6-1946-11e7-98c3-632afd5bdff5.png)
-
 
 ## Build
 `docker-compose exec web yarn build` Create production build of static files.
