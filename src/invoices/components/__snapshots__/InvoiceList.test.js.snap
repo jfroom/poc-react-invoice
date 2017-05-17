@@ -7,7 +7,7 @@ exports[`test empty 1`] = `
   <div
     className="row">
     <div
-      className="col-sm-9">
+      className="col-xs-9">
       <LinkContainer
         activeClassName="active"
         exact={false}
@@ -30,7 +30,7 @@ exports[`test empty 1`] = `
       </LinkContainer>
     </div>
     <div
-      className="col-sm-3">
+      className="col-xs-3">
       <div
         className="form-group">
         <label
@@ -61,7 +61,7 @@ exports[`test empty 1`] = `
   <Table
     bordered={false}
     bsClass="table"
-    className="invoice-list"
+    className="invoice-list well"
     condensed={true}
     hover={true}
     responsive={false}
@@ -113,7 +113,7 @@ exports[`test full list with delete & status filter mocks 1`] = `
   <div
     className="row">
     <div
-      className="col-sm-9">
+      className="col-xs-9">
       <LinkContainer
         activeClassName="active"
         exact={false}
@@ -136,7 +136,7 @@ exports[`test full list with delete & status filter mocks 1`] = `
       </LinkContainer>
     </div>
     <div
-      className="col-sm-3">
+      className="col-xs-3">
       <div
         className="form-group">
         <label
@@ -167,7 +167,7 @@ exports[`test full list with delete & status filter mocks 1`] = `
   <Table
     bordered={false}
     bsClass="table"
-    className="invoice-list"
+    className="invoice-list well"
     condensed={true}
     hover={true}
     responsive={false}

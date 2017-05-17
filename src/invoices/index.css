@@ -6,6 +6,10 @@
 .invoice-list td:nth-child(2){
   width: 50%;
 }
+.invoice-list td:nth-child(2){
+  width: 20%;
+}
+
 .invoice-list tr.overdue td {
   background-color: #ffd3d3;
 }
