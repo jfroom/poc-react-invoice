@@ -18,7 +18,7 @@ Demo: https://jfroom.github.io/poc-react-invoice
 - [Yarn](https://yarnpkg.com)
 - [React-Bootstrap](https://react-bootstrap.github.io/)
 - TravisCI integration with auto-deploy to GitHub Pages
-- [Nuclide](https://nuclide.io/)
+- [Nuclide](https://nuclide.io/) & [Redux DevTools](https://github.com/gaearon/redux-devtools)
 
 # Getting Started
 
