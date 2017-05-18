@@ -57,3 +57,6 @@ Demo: https://jfroom.github.io/poc-react-invoice
 - [Testing Redux Applications](http://randycoulman.com/blog/2016/03/15/testing-redux-applications/)
 - [Host single page apps with GitHub Pages](https://github.com/rafrex/spa-github-pages)
 - [Testing React components with Jest and Enzyme](https://hackernoon.com/testing-react-components-with-jest-and-enzyme-41d592c174f)
+
+# TODO
+- 'enzyme-matchers' package is not flowtyped so project is throwing Flow errors based on that. Should be resolved once this PR gets merged: https://github.com/blainekasten/enzyme-matchers/pull/84
