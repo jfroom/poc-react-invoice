@@ -94,14 +94,14 @@ class InvoiceList extends Component {
         <h1>Invoices</h1>
         <hr />
         <div className="row">
-          <div className="col-xs-9">
+          <div className="col-sm-9">
             <LinkContainer to="/new">
               <Button bsStyle="success" bsSize="large"><Glyphicon glyph="plus" />
                 {' '} New Invoice
               </Button>
             </LinkContainer>
           </div>
-          <div className="col-xs-3">
+          <div className="col-sm-3">
             <div className="form-group">
               <label className="control-label">Status Filter</label>
               <select
