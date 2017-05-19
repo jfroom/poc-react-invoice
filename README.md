@@ -4,9 +4,10 @@ Simple React/Redux/Router/Flow based Invoice SPA proof-of-concept. Loosely based
 
 Demo: https://jfroom.github.io/poc-react-invoice
 
+[Blog post](https://medium.com/@jfroom/invoice-prototype-react-redux-router-flow-spa-8d0b3f70499c) with a bit of commentary on the technologies.
+
 ![Demo image](https://cloud.githubusercontent.com/assets/943108/26180415/45f50b7c-3b1e-11e7-9ab0-e2b3fc753f3e.png)
 
-[Blog post](https://medium.com/@jfroom/invoice-prototype-react-redux-router-flow-spa-8d0b3f70499c) with a bit of commentary on the technologies.
 
 
 ## Technologies
