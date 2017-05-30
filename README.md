@@ -62,4 +62,4 @@ Demo: https://jfroom.github.io/poc-react-invoice
 - [Testing React components with Jest and Enzyme](https://hackernoon.com/testing-react-components-with-jest-and-enzyme-41d592c174f)
 
 # TODO
-- 'enzyme-matchers' package is not flowtyped so project is throwing Flow errors based on that. Should be resolved once this PR gets merged: https://github.com/blainekasten/enzyme-matchers/pull/84
+- 'enzyme-matchers' package is not flowtyped so project is throwing Flow errors based on that. Related to this issue: https://github.com/blainekasten/enzyme-matchers/issues/77
