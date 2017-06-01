@@ -2,12 +2,17 @@
 import React, { Component } from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import type { Location } from '../models'
+import styled from 'styled-components'
 
 type BreadcrumbLink = {
   text: string,
   to?: string,
   active?: boolean,
 }
+
+const StyleWrap = styled.div`
+  text-transform: capitalize;
+`
 
 class Breadcrumb extends Component {
   static defaultProps = {
@@ -39,11 +44,11 @@ class Breadcrumb extends Component {
     }
 
     return (
-      <div>
+      <StyleWrap>
         <ol className="breadcrumb">
           {items.map((item, idx) => (<li key={idx}>{getInner(item)}</li>))}
         </ol>
-      </div>
+      </StyleWrap>
     )
   }
 }

@@ -8,11 +8,10 @@ Demo: https://jfroom.github.io/poc-react-invoice
 
 ![Demo image](https://cloud.githubusercontent.com/assets/943108/26180415/45f50b7c-3b1e-11e7-9ab0-e2b3fc753f3e.png)
 
-
-
 ## Technologies
 - [React](https://facebook.github.io/react)
 - [Redux](http://redux.js.org/) & [React Router](https://reacttraining.com/react-router/)
+- [Styled Components](https://www.styled-components.com/)
 - [Flow](https://flow.org/) static type checking
 - Testing with [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/)
 - [Nuclide](https://nuclide.io/) & [Redux DevTools](https://github.com/gaearon/redux-devtools)
@@ -22,7 +21,6 @@ Demo: https://jfroom.github.io/poc-react-invoice
 - [Yarn](https://yarnpkg.com)
 - [React-Bootstrap](https://react-bootstrap.github.io/)
 - TravisCI integration with auto-deploy to GitHub Pages
-
 
 # Getting Started
 
@@ -62,4 +60,5 @@ Demo: https://jfroom.github.io/poc-react-invoice
 - [Testing React components with Jest and Enzyme](https://hackernoon.com/testing-react-components-with-jest-and-enzyme-41d592c174f)
 
 # TODO
-- 'enzyme-matchers' package is not flowtyped so project is throwing Flow errors based on that. Related to this issue: https://github.com/blainekasten/enzyme-matchers/issues/77
+- 'enzyme-matchers' & 'jest-enzyme' packages are not flowtyped so project is throwing Flow errors based on that. Related to this issue: https://github.com/blainekasten/enzyme-matchers/issues/77. Ignoring for now in `.flowconfig`
+- Styled-Components v2 flow types WIP: https://github.com/styled-components/styled-components/issues/843 - ignoring in `.flowconfig`

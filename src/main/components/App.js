@@ -8,8 +8,14 @@ import {
   InvoiceFormContainer,
   InvoiceListContainer,
 } from '../../invoices'
-import '../index.css'
-import '../../invoices/index.css'
+import styled from 'styled-components'
+
+const StyleWrap = styled.div`
+  font-family: 'Open Sans', Arial, sans-serif;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
+  }
+`
 
 const App = () => {
   const BreadcrumbWithRouter:Router = withRouter(Breadcrumb)
@@ -21,7 +27,7 @@ const App = () => {
   }
   return (
     <Router basename={basename}>
-      <div>
+      <StyleWrap>
         <Header />
         <div className="App container text-left">
           <BreadcrumbWithRouter />
@@ -29,7 +35,7 @@ const App = () => {
           <Route path="/new" component={InvoiceFormContainer} />
           <Route path="/edit" component={InvoiceFormContainer} />
         </div>
-      </div>
+      </StyleWrap>
     </Router>
   )
 }

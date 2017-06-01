@@ -6,6 +6,23 @@ import classnames from 'classnames'
 import { StatusTypes } from '../constants'
 import type { Invoice, History } from '../models'
 import numeral from 'numeral'
+import styled from 'styled-components'
+
+const StyleWrap = styled.div`
+  td {
+    width: 10%;
+    cursor: pointer;
+    &:nth-child(2){
+      width: 60%;
+    }
+  }
+  tr.overdue td {
+    background-color: #ffd3d3;
+  }
+  .btn {
+    margin: 2px;
+  }
+`
 
 class InvoiceList extends Component {
   static defaultProps = {
@@ -90,7 +107,7 @@ class InvoiceList extends Component {
     }
 
     return (
-      <div>
+      <StyleWrap>
         <h1>Invoices</h1>
         <hr />
         <div className="row">
@@ -138,9 +155,10 @@ class InvoiceList extends Component {
             {numeral(total).format('$0,0.00')}
           </FormControl.Static>
         </FormGroup>
-      </div>
+      </StyleWrap>
     )
   }
 }
+
 
 export default InvoiceList

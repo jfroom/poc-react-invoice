@@ -7,6 +7,7 @@ import { LinkContainer } from 'react-router-bootstrap'
 import { StatusTypes } from '../constants'
 import type { InvoiceItem, Invoice } from '../models'
 import numeral from 'numeral'
+import styled from 'styled-components'
 
 export type Props = {
   invoice: Invoice,
@@ -28,6 +29,26 @@ const emptyInvoice = (): Invoice => (
   { id: -1, title: '', date: '', status: StatusTypes.UNPAID, total: 0, notes: '', items: [] }
 )
 
+const StyleWrap = styled.div`
+  table {
+    margin-bottom: 0;
+    td {
+      &:nth-child(1) {
+        width: 75%;
+      }
+      &:nth-child(3){
+        width: 15%;
+      }
+      &:nth-child(3){
+        width: 10%;
+        vertical-align: middle;
+      }
+      .form-group {
+        margin-bottom: 0;
+      }
+    }
+  }
+`
 class InvoiceForm extends Component<DefaultProps, Props, State> {
   static defaultProps = {
     invoice: emptyInvoice(),
@@ -116,7 +137,7 @@ class InvoiceForm extends Component<DefaultProps, Props, State> {
       ))
     )
     return (
-      <div className="InvoiceForm">
+      <StyleWrap>
         <h1>{invoice.id > -1 ? 'Edit' : 'New'} Invoice</h1>
         <hr />
         <form id="form" onSubmit={this.handleSubmit}>
@@ -158,10 +179,10 @@ class InvoiceForm extends Component<DefaultProps, Props, State> {
             </div>
           </div>
 
-          <FormGroup controlId="line-items">
+          <FormGroup>
             <ControlLabel>Line Items</ControlLabel>
             <div className="well">
-              <Table condensed className="line-items">
+              <Table>
                 <thead>
                   <tr>
                     <th>Description</th>
@@ -236,7 +257,7 @@ class InvoiceForm extends Component<DefaultProps, Props, State> {
           </div>
         </form>
         <p />
-      </div>
+      </StyleWrap>
     )
   }
 }
