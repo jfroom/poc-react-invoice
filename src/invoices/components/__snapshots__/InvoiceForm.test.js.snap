@@ -44,430 +44,429 @@ exports[`test edit invoice 1`] = `
           "title": "Test title",
         }
       }>
-      <div
-        className="InvoiceForm">
-        <h1>
-          Edit
-           Invoice
-        </h1>
-        <hr />
-        <form
-          id="form"
-          onSubmit={[Function]}>
-          <div
-            className="row">
+      <styled.div>
+        <div
+          className="sc-bdVaJa hdXCUo">
+          <h1>
+            Edit
+             Invoice
+          </h1>
+          <hr />
+          <form
+            id="form"
+            onSubmit={[Function]}>
             <div
-              className="col-sm-8">
-              <FormGroup
-                bsClass="form-group"
-                controlId="title">
-                <div
-                  className="form-group">
-                  <ControlLabel
-                    bsClass="control-label"
-                    srOnly={false}>
-                    <label
-                      className="control-label"
-                      htmlFor="title">
-                      Title
-                    </label>
-                  </ControlLabel>
-                  <FormControl
-                    bsClass="form-control"
-                    componentClass="input"
-                    onChange={[Function]}
-                    placeholder="Enter title"
-                    type="text"
-                    value="Test title">
-                    <input
-                      className="form-control"
-                      id="title"
+              className="row">
+              <div
+                className="col-sm-8">
+                <FormGroup
+                  bsClass="form-group"
+                  controlId="title">
+                  <div
+                    className="form-group">
+                    <ControlLabel
+                      bsClass="control-label"
+                      srOnly={false}>
+                      <label
+                        className="control-label"
+                        htmlFor="title">
+                        Title
+                      </label>
+                    </ControlLabel>
+                    <FormControl
+                      bsClass="form-control"
+                      componentClass="input"
                       onChange={[Function]}
                       placeholder="Enter title"
                       type="text"
-                      value="Test title" />
-                  </FormControl>
-                </div>
-              </FormGroup>
-            </div>
-            <div
-              className="col-sm-2">
-              <FormGroup
-                bsClass="form-group"
-                controlId="date">
-                <div
-                  className="form-group">
-                  <ControlLabel
-                    bsClass="control-label"
-                    srOnly={false}>
-                    <label
-                      className="control-label"
-                      htmlFor="date">
-                      Due Date
-                    </label>
-                  </ControlLabel>
-                  <FormControl
-                    bsClass="form-control"
-                    componentClass="input"
-                    onChange={[Function]}
-                    placeholder="Ex. 1/1/2017"
-                    type="text"
-                    value="1/2/2017">
-                    <input
-                      className="form-control"
-                      id="date"
+                      value="Test title">
+                      <input
+                        className="form-control"
+                        id="title"
+                        onChange={[Function]}
+                        placeholder="Enter title"
+                        type="text"
+                        value="Test title" />
+                    </FormControl>
+                  </div>
+                </FormGroup>
+              </div>
+              <div
+                className="col-sm-2">
+                <FormGroup
+                  bsClass="form-group"
+                  controlId="date">
+                  <div
+                    className="form-group">
+                    <ControlLabel
+                      bsClass="control-label"
+                      srOnly={false}>
+                      <label
+                        className="control-label"
+                        htmlFor="date">
+                        Due Date
+                      </label>
+                    </ControlLabel>
+                    <FormControl
+                      bsClass="form-control"
+                      componentClass="input"
                       onChange={[Function]}
                       placeholder="Ex. 1/1/2017"
                       type="text"
-                      value="1/2/2017" />
-                  </FormControl>
-                </div>
-              </FormGroup>
-            </div>
-            <div
-              className="col-sm-2">
-              <FormGroup
-                bsClass="form-group"
-                controlId="status">
-                <div
-                  className="form-group">
-                  <ControlLabel
-                    bsClass="control-label"
-                    srOnly={false}>
-                    <label
-                      className="control-label"
-                      htmlFor="status">
-                      Status
-                    </label>
-                  </ControlLabel>
-                  <FormControl
-                    bsClass="form-control"
-                    componentClass="select"
-                    onChange={[Function]}
-                    value="Paid">
-                    <select
-                      className="form-control"
-                      id="status"
+                      value="1/2/2017">
+                      <input
+                        className="form-control"
+                        id="date"
+                        onChange={[Function]}
+                        placeholder="Ex. 1/1/2017"
+                        type="text"
+                        value="1/2/2017" />
+                    </FormControl>
+                  </div>
+                </FormGroup>
+              </div>
+              <div
+                className="col-sm-2">
+                <FormGroup
+                  bsClass="form-group"
+                  controlId="status">
+                  <div
+                    className="form-group">
+                    <ControlLabel
+                      bsClass="control-label"
+                      srOnly={false}>
+                      <label
+                        className="control-label"
+                        htmlFor="status">
+                        Status
+                      </label>
+                    </ControlLabel>
+                    <FormControl
+                      bsClass="form-control"
+                      componentClass="select"
                       onChange={[Function]}
                       value="Paid">
-                      <option
-                        value="Unpaid">
-                        Unpaid
-                      </option>
-                      <option
+                      <select
+                        className="form-control"
+                        id="status"
+                        onChange={[Function]}
                         value="Paid">
-                        Paid
-                      </option>
-                    </select>
-                  </FormControl>
-                </div>
-              </FormGroup>
+                        <option
+                          value="Unpaid">
+                          Unpaid
+                        </option>
+                        <option
+                          value="Paid">
+                          Paid
+                        </option>
+                      </select>
+                    </FormControl>
+                  </div>
+                </FormGroup>
+              </div>
             </div>
-          </div>
-          <FormGroup
-            bsClass="form-group"
-            controlId="line-items">
-            <div
-              className="form-group">
-              <ControlLabel
-                bsClass="control-label"
-                srOnly={false}>
-                <label
-                  className="control-label"
-                  htmlFor="line-items">
-                  Line Items
-                </label>
-              </ControlLabel>
+            <FormGroup
+              bsClass="form-group">
               <div
-                className="well">
-                <Table
-                  bordered={false}
-                  bsClass="table"
-                  className="line-items"
-                  condensed={true}
-                  hover={false}
-                  responsive={false}
-                  striped={false}>
-                  <table
-                    className="line-items table table-condensed">
-                    <thead>
-                      <tr>
-                        <th>
-                          Description
-                        </th>
-                        <th>
-                          Price
-                        </th>
-                        <th>
-                          Action
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          test item 1
-                        </td>
-                        <td>
-                          $7.77
-                        </td>
-                        <td>
-                          <Button
-                            active={false}
-                            block={false}
-                            bsClass="btn"
-                            bsStyle="default"
-                            className="btn-xs btn-danger btn-delete-item"
-                            disabled={false}
-                            onClick={[Function]}>
-                            <button
-                              className="btn-xs btn-danger btn-delete-item btn btn-default"
+                className="form-group">
+                <ControlLabel
+                  bsClass="control-label"
+                  srOnly={false}>
+                  <label
+                    className="control-label">
+                    Line Items
+                  </label>
+                </ControlLabel>
+                <div
+                  className="well">
+                  <Table
+                    bordered={false}
+                    bsClass="table"
+                    condensed={false}
+                    hover={false}
+                    responsive={false}
+                    striped={false}>
+                    <table
+                      className="table">
+                      <thead>
+                        <tr>
+                          <th>
+                            Description
+                          </th>
+                          <th>
+                            Price
+                          </th>
+                          <th>
+                            Action
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            test item 1
+                          </td>
+                          <td>
+                            $7.77
+                          </td>
+                          <td>
+                            <Button
+                              active={false}
+                              block={false}
+                              bsClass="btn"
+                              bsStyle="default"
+                              className="btn-xs btn-danger btn-delete-item"
                               disabled={false}
-                              onClick={[Function]}
-                              type="button">
-                              <Glyphicon
-                                bsClass="glyphicon"
-                                glyph="trash">
-                                <span
-                                  className="glyphicon glyphicon-trash" />
-                              </Glyphicon>
-                            </button>
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          test item 1
-                        </td>
-                        <td>
-                          $1.21
-                        </td>
-                        <td>
-                          <Button
-                            active={false}
-                            block={false}
-                            bsClass="btn"
-                            bsStyle="default"
-                            className="btn-xs btn-danger btn-delete-item"
-                            disabled={false}
-                            onClick={[Function]}>
-                            <button
-                              className="btn-xs btn-danger btn-delete-item btn btn-default"
+                              onClick={[Function]}>
+                              <button
+                                className="btn-xs btn-danger btn-delete-item btn btn-default"
+                                disabled={false}
+                                onClick={[Function]}
+                                type="button">
+                                <Glyphicon
+                                  bsClass="glyphicon"
+                                  glyph="trash">
+                                  <span
+                                    className="glyphicon glyphicon-trash" />
+                                </Glyphicon>
+                              </button>
+                            </Button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            test item 1
+                          </td>
+                          <td>
+                            $1.21
+                          </td>
+                          <td>
+                            <Button
+                              active={false}
+                              block={false}
+                              bsClass="btn"
+                              bsStyle="default"
+                              className="btn-xs btn-danger btn-delete-item"
                               disabled={false}
-                              onClick={[Function]}
-                              type="button">
-                              <Glyphicon
-                                bsClass="glyphicon"
-                                glyph="trash">
-                                <span
-                                  className="glyphicon glyphicon-trash" />
-                              </Glyphicon>
-                            </button>
-                          </Button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <FormGroup
-                            bsClass="form-group"
-                            controlId="lineItemText">
-                            <div
-                              className="form-group">
-                              <FormControl
-                                bsClass="form-control"
-                                componentClass="input"
-                                id="lineItemText"
-                                onChange={[Function]}
-                                placeholder="Enter line item"
-                                type="text"
-                                value="">
-                                <input
-                                  className="form-control"
+                              onClick={[Function]}>
+                              <button
+                                className="btn-xs btn-danger btn-delete-item btn btn-default"
+                                disabled={false}
+                                onClick={[Function]}
+                                type="button">
+                                <Glyphicon
+                                  bsClass="glyphicon"
+                                  glyph="trash">
+                                  <span
+                                    className="glyphicon glyphicon-trash" />
+                                </Glyphicon>
+                              </button>
+                            </Button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <FormGroup
+                              bsClass="form-group"
+                              controlId="lineItemText">
+                              <div
+                                className="form-group">
+                                <FormControl
+                                  bsClass="form-control"
+                                  componentClass="input"
                                   id="lineItemText"
                                   onChange={[Function]}
                                   placeholder="Enter line item"
                                   type="text"
-                                  value="" />
-                              </FormControl>
-                            </div>
-                          </FormGroup>
-                        </td>
-                        <td>
-                          <FormGroup
-                            bsClass="form-group"
-                            controlId="lineItemPrice">
-                            <div
-                              className="form-group">
-                              <FormControl
-                                bsClass="form-control"
-                                componentClass="input"
-                                min="0"
-                                onChange={[Function]}
-                                placeholder="Enter price"
-                                step="any"
-                                type="number"
-                                value="">
-                                <input
-                                  className="form-control"
-                                  id="lineItemPrice"
+                                  value="">
+                                  <input
+                                    className="form-control"
+                                    id="lineItemText"
+                                    onChange={[Function]}
+                                    placeholder="Enter line item"
+                                    type="text"
+                                    value="" />
+                                </FormControl>
+                              </div>
+                            </FormGroup>
+                          </td>
+                          <td>
+                            <FormGroup
+                              bsClass="form-group"
+                              controlId="lineItemPrice">
+                              <div
+                                className="form-group">
+                                <FormControl
+                                  bsClass="form-control"
+                                  componentClass="input"
                                   min="0"
                                   onChange={[Function]}
                                   placeholder="Enter price"
                                   step="any"
                                   type="number"
-                                  value="" />
-                              </FormControl>
-                            </div>
-                          </FormGroup>
-                        </td>
-                        <td>
-                          <Button
-                            active={false}
-                            block={false}
-                            bsClass="btn"
-                            bsStyle="default"
-                            className="btn-xs btn-success"
-                            disabled={false}
-                            id="add-item-btn"
-                            onClick={[Function]}>
-                            <button
-                              className="btn-xs btn-success btn btn-default"
+                                  value="">
+                                  <input
+                                    className="form-control"
+                                    id="lineItemPrice"
+                                    min="0"
+                                    onChange={[Function]}
+                                    placeholder="Enter price"
+                                    step="any"
+                                    type="number"
+                                    value="" />
+                                </FormControl>
+                              </div>
+                            </FormGroup>
+                          </td>
+                          <td>
+                            <Button
+                              active={false}
+                              block={false}
+                              bsClass="btn"
+                              bsStyle="default"
+                              className="btn-xs btn-success"
                               disabled={false}
                               id="add-item-btn"
-                              onClick={[Function]}
-                              type="button">
-                              <Glyphicon
-                                bsClass="glyphicon"
-                                glyph="plus">
-                                <span
-                                  className="glyphicon glyphicon-plus" />
-                              </Glyphicon>
-                               Add
-                            </button>
-                          </Button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </Table>
+                              onClick={[Function]}>
+                              <button
+                                className="btn-xs btn-success btn btn-default"
+                                disabled={false}
+                                id="add-item-btn"
+                                onClick={[Function]}
+                                type="button">
+                                <Glyphicon
+                                  bsClass="glyphicon"
+                                  glyph="plus">
+                                  <span
+                                    className="glyphicon glyphicon-plus" />
+                                </Glyphicon>
+                                 Add
+                              </button>
+                            </Button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </Table>
+                </div>
               </div>
-            </div>
-          </FormGroup>
-          <FormGroup
-            bsClass="form-group"
-            controlId="total">
-            <div
-              className="form-group">
-              <ControlLabel
-                bsClass="control-label"
-                srOnly={false}>
-                <label
-                  className="control-label"
-                  htmlFor="total">
-                  Total Due
-                </label>
-              </ControlLabel>
-              <FormControlStatic
-                bsClass="form-control-static"
-                componentClass="p">
-                <p
-                  className="form-control-static">
-                  $0.00
-                </p>
-              </FormControlStatic>
-            </div>
-          </FormGroup>
-          <FormGroup
-            bsClass="form-group"
-            controlId="notes">
-            <div
-              className="form-group">
-              <ControlLabel
-                bsClass="control-label"
-                srOnly={false}>
-                <label
-                  className="control-label"
-                  htmlFor="notes">
-                  Notes
-                </label>
-              </ControlLabel>
-              <FormControl
-                bsClass="form-control"
-                componentClass="textArea"
-                onChange={[Function]}
-                placeholder="Enter notes"
-                value="Test notes">
-                <textArea
-                  className="form-control"
-                  id="notes"
+            </FormGroup>
+            <FormGroup
+              bsClass="form-group"
+              controlId="total">
+              <div
+                className="form-group">
+                <ControlLabel
+                  bsClass="control-label"
+                  srOnly={false}>
+                  <label
+                    className="control-label"
+                    htmlFor="total">
+                    Total Due
+                  </label>
+                </ControlLabel>
+                <FormControlStatic
+                  bsClass="form-control-static"
+                  componentClass="p">
+                  <p
+                    className="form-control-static">
+                    $0.00
+                  </p>
+                </FormControlStatic>
+              </div>
+            </FormGroup>
+            <FormGroup
+              bsClass="form-group"
+              controlId="notes">
+              <div
+                className="form-group">
+                <ControlLabel
+                  bsClass="control-label"
+                  srOnly={false}>
+                  <label
+                    className="control-label"
+                    htmlFor="notes">
+                    Notes
+                  </label>
+                </ControlLabel>
+                <FormControl
+                  bsClass="form-control"
+                  componentClass="textArea"
                   onChange={[Function]}
                   placeholder="Enter notes"
-                  value="Test notes" />
-              </FormControl>
-            </div>
-          </FormGroup>
-          <div
-            className="text-right">
-            <LinkContainer
-              activeClassName="active"
-              className="btn-default btn-lg"
-              exact={true}
-              replace={false}
-              strict={false}
-              to="/">
-              <Route
+                  value="Test notes">
+                  <textArea
+                    className="form-control"
+                    id="notes"
+                    onChange={[Function]}
+                    placeholder="Enter notes"
+                    value="Test notes" />
+                </FormControl>
+              </div>
+            </FormGroup>
+            <div
+              className="text-right">
+              <LinkContainer
+                activeClassName="active"
+                className="btn-default btn-lg"
                 exact={true}
-                path="/"
-                strict={false}>
-                <Button
-                  active={false}
-                  block={false}
-                  bsClass="btn"
-                  bsStyle="default"
-                  className="btn-default btn-lg active"
-                  disabled={false}
-                  href="/"
-                  onClick={[Function]}
-                  style={Object {}}>
-                  <SafeAnchor
-                    className="btn-default btn-lg active btn btn-default"
-                    componentClass="a"
+                replace={false}
+                strict={false}
+                to="/">
+                <Route
+                  exact={true}
+                  path="/"
+                  strict={false}>
+                  <Button
+                    active={false}
+                    block={false}
+                    bsClass="btn"
+                    bsStyle="default"
+                    className="btn-default btn-lg active"
                     disabled={false}
                     href="/"
                     onClick={[Function]}
                     style={Object {}}>
-                    <a
+                    <SafeAnchor
                       className="btn-default btn-lg active btn btn-default"
+                      componentClass="a"
+                      disabled={false}
                       href="/"
                       onClick={[Function]}
                       style={Object {}}>
-                      Cancel
-                    </a>
-                  </SafeAnchor>
-                </Button>
-              </Route>
-            </LinkContainer>
-            <Button
-              active={false}
-              block={false}
-              bsClass="btn"
-              bsStyle="default"
-              className="btn-success btn-lg"
-              disabled={false}
-              id="submit"
-              type="submit">
-              <button
-                className="btn-success btn-lg btn btn-default"
+                      <a
+                        className="btn-default btn-lg active btn btn-default"
+                        href="/"
+                        onClick={[Function]}
+                        style={Object {}}>
+                        Cancel
+                      </a>
+                    </SafeAnchor>
+                  </Button>
+                </Route>
+              </LinkContainer>
+              <Button
+                active={false}
+                block={false}
+                bsClass="btn"
+                bsStyle="default"
+                className="btn-success btn-lg"
                 disabled={false}
                 id="submit"
                 type="submit">
-                Save
-              </button>
-            </Button>
-          </div>
-        </form>
-        <p />
-      </div>
+                <button
+                  className="btn-success btn-lg btn btn-default"
+                  disabled={false}
+                  id="submit"
+                  type="submit">
+                  Save
+                </button>
+              </Button>
+            </div>
+          </form>
+          <p />
+        </div>
+      </styled.div>
     </InvoiceForm>
   </Router>
 </BrowserRouter>
@@ -511,368 +510,367 @@ exports[`test new invoice 1`] = `
           "total": 0,
         }
       }>
-      <div
-        className="InvoiceForm">
-        <h1>
-          New
-           Invoice
-        </h1>
-        <hr />
-        <form
-          id="form"
-          onSubmit={[Function]}>
-          <div
-            className="row">
+      <styled.div>
+        <div
+          className="sc-bdVaJa hdXCUo">
+          <h1>
+            New
+             Invoice
+          </h1>
+          <hr />
+          <form
+            id="form"
+            onSubmit={[Function]}>
             <div
-              className="col-sm-8">
-              <FormGroup
-                bsClass="form-group"
-                controlId="title">
-                <div
-                  className="form-group">
-                  <ControlLabel
-                    bsClass="control-label"
-                    srOnly={false}>
-                    <label
-                      className="control-label"
-                      htmlFor="title">
-                      Title
-                    </label>
-                  </ControlLabel>
-                  <FormControl
-                    bsClass="form-control"
-                    componentClass="input"
-                    onChange={[Function]}
-                    placeholder="Enter title"
-                    type="text"
-                    value="">
-                    <input
-                      className="form-control"
-                      id="title"
+              className="row">
+              <div
+                className="col-sm-8">
+                <FormGroup
+                  bsClass="form-group"
+                  controlId="title">
+                  <div
+                    className="form-group">
+                    <ControlLabel
+                      bsClass="control-label"
+                      srOnly={false}>
+                      <label
+                        className="control-label"
+                        htmlFor="title">
+                        Title
+                      </label>
+                    </ControlLabel>
+                    <FormControl
+                      bsClass="form-control"
+                      componentClass="input"
                       onChange={[Function]}
                       placeholder="Enter title"
                       type="text"
-                      value="" />
-                  </FormControl>
-                </div>
-              </FormGroup>
-            </div>
-            <div
-              className="col-sm-2">
-              <FormGroup
-                bsClass="form-group"
-                controlId="date">
-                <div
-                  className="form-group">
-                  <ControlLabel
-                    bsClass="control-label"
-                    srOnly={false}>
-                    <label
-                      className="control-label"
-                      htmlFor="date">
-                      Due Date
-                    </label>
-                  </ControlLabel>
-                  <FormControl
-                    bsClass="form-control"
-                    componentClass="input"
-                    onChange={[Function]}
-                    placeholder="Ex. 1/1/2017"
-                    type="text"
-                    value="">
-                    <input
-                      className="form-control"
-                      id="date"
+                      value="">
+                      <input
+                        className="form-control"
+                        id="title"
+                        onChange={[Function]}
+                        placeholder="Enter title"
+                        type="text"
+                        value="" />
+                    </FormControl>
+                  </div>
+                </FormGroup>
+              </div>
+              <div
+                className="col-sm-2">
+                <FormGroup
+                  bsClass="form-group"
+                  controlId="date">
+                  <div
+                    className="form-group">
+                    <ControlLabel
+                      bsClass="control-label"
+                      srOnly={false}>
+                      <label
+                        className="control-label"
+                        htmlFor="date">
+                        Due Date
+                      </label>
+                    </ControlLabel>
+                    <FormControl
+                      bsClass="form-control"
+                      componentClass="input"
                       onChange={[Function]}
                       placeholder="Ex. 1/1/2017"
                       type="text"
-                      value="" />
-                  </FormControl>
-                </div>
-              </FormGroup>
-            </div>
-            <div
-              className="col-sm-2">
-              <FormGroup
-                bsClass="form-group"
-                controlId="status">
-                <div
-                  className="form-group">
-                  <ControlLabel
-                    bsClass="control-label"
-                    srOnly={false}>
-                    <label
-                      className="control-label"
-                      htmlFor="status">
-                      Status
-                    </label>
-                  </ControlLabel>
-                  <FormControl
-                    bsClass="form-control"
-                    componentClass="select"
-                    onChange={[Function]}
-                    value="Unpaid">
-                    <select
-                      className="form-control"
-                      id="status"
+                      value="">
+                      <input
+                        className="form-control"
+                        id="date"
+                        onChange={[Function]}
+                        placeholder="Ex. 1/1/2017"
+                        type="text"
+                        value="" />
+                    </FormControl>
+                  </div>
+                </FormGroup>
+              </div>
+              <div
+                className="col-sm-2">
+                <FormGroup
+                  bsClass="form-group"
+                  controlId="status">
+                  <div
+                    className="form-group">
+                    <ControlLabel
+                      bsClass="control-label"
+                      srOnly={false}>
+                      <label
+                        className="control-label"
+                        htmlFor="status">
+                        Status
+                      </label>
+                    </ControlLabel>
+                    <FormControl
+                      bsClass="form-control"
+                      componentClass="select"
                       onChange={[Function]}
                       value="Unpaid">
-                      <option
+                      <select
+                        className="form-control"
+                        id="status"
+                        onChange={[Function]}
                         value="Unpaid">
-                        Unpaid
-                      </option>
-                      <option
-                        value="Paid">
-                        Paid
-                      </option>
-                    </select>
-                  </FormControl>
-                </div>
-              </FormGroup>
+                        <option
+                          value="Unpaid">
+                          Unpaid
+                        </option>
+                        <option
+                          value="Paid">
+                          Paid
+                        </option>
+                      </select>
+                    </FormControl>
+                  </div>
+                </FormGroup>
+              </div>
             </div>
-          </div>
-          <FormGroup
-            bsClass="form-group"
-            controlId="line-items">
-            <div
-              className="form-group">
-              <ControlLabel
-                bsClass="control-label"
-                srOnly={false}>
-                <label
-                  className="control-label"
-                  htmlFor="line-items">
-                  Line Items
-                </label>
-              </ControlLabel>
+            <FormGroup
+              bsClass="form-group">
               <div
-                className="well">
-                <Table
-                  bordered={false}
-                  bsClass="table"
-                  className="line-items"
-                  condensed={true}
-                  hover={false}
-                  responsive={false}
-                  striped={false}>
-                  <table
-                    className="line-items table table-condensed">
-                    <thead>
-                      <tr>
-                        <th>
-                          Description
-                        </th>
-                        <th>
-                          Price
-                        </th>
-                        <th>
-                          Action
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <FormGroup
-                            bsClass="form-group"
-                            controlId="lineItemText">
-                            <div
-                              className="form-group">
-                              <FormControl
-                                bsClass="form-control"
-                                componentClass="input"
-                                id="lineItemText"
-                                onChange={[Function]}
-                                placeholder="Enter line item"
-                                type="text"
-                                value="">
-                                <input
-                                  className="form-control"
+                className="form-group">
+                <ControlLabel
+                  bsClass="control-label"
+                  srOnly={false}>
+                  <label
+                    className="control-label">
+                    Line Items
+                  </label>
+                </ControlLabel>
+                <div
+                  className="well">
+                  <Table
+                    bordered={false}
+                    bsClass="table"
+                    condensed={false}
+                    hover={false}
+                    responsive={false}
+                    striped={false}>
+                    <table
+                      className="table">
+                      <thead>
+                        <tr>
+                          <th>
+                            Description
+                          </th>
+                          <th>
+                            Price
+                          </th>
+                          <th>
+                            Action
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <FormGroup
+                              bsClass="form-group"
+                              controlId="lineItemText">
+                              <div
+                                className="form-group">
+                                <FormControl
+                                  bsClass="form-control"
+                                  componentClass="input"
                                   id="lineItemText"
                                   onChange={[Function]}
                                   placeholder="Enter line item"
                                   type="text"
-                                  value="" />
-                              </FormControl>
-                            </div>
-                          </FormGroup>
-                        </td>
-                        <td>
-                          <FormGroup
-                            bsClass="form-group"
-                            controlId="lineItemPrice">
-                            <div
-                              className="form-group">
-                              <FormControl
-                                bsClass="form-control"
-                                componentClass="input"
-                                min="0"
-                                onChange={[Function]}
-                                placeholder="Enter price"
-                                step="any"
-                                type="number"
-                                value="">
-                                <input
-                                  className="form-control"
-                                  id="lineItemPrice"
+                                  value="">
+                                  <input
+                                    className="form-control"
+                                    id="lineItemText"
+                                    onChange={[Function]}
+                                    placeholder="Enter line item"
+                                    type="text"
+                                    value="" />
+                                </FormControl>
+                              </div>
+                            </FormGroup>
+                          </td>
+                          <td>
+                            <FormGroup
+                              bsClass="form-group"
+                              controlId="lineItemPrice">
+                              <div
+                                className="form-group">
+                                <FormControl
+                                  bsClass="form-control"
+                                  componentClass="input"
                                   min="0"
                                   onChange={[Function]}
                                   placeholder="Enter price"
                                   step="any"
                                   type="number"
-                                  value="" />
-                              </FormControl>
-                            </div>
-                          </FormGroup>
-                        </td>
-                        <td>
-                          <Button
-                            active={false}
-                            block={false}
-                            bsClass="btn"
-                            bsStyle="default"
-                            className="btn-xs btn-success"
-                            disabled={false}
-                            id="add-item-btn"
-                            onClick={[Function]}>
-                            <button
-                              className="btn-xs btn-success btn btn-default"
+                                  value="">
+                                  <input
+                                    className="form-control"
+                                    id="lineItemPrice"
+                                    min="0"
+                                    onChange={[Function]}
+                                    placeholder="Enter price"
+                                    step="any"
+                                    type="number"
+                                    value="" />
+                                </FormControl>
+                              </div>
+                            </FormGroup>
+                          </td>
+                          <td>
+                            <Button
+                              active={false}
+                              block={false}
+                              bsClass="btn"
+                              bsStyle="default"
+                              className="btn-xs btn-success"
                               disabled={false}
                               id="add-item-btn"
-                              onClick={[Function]}
-                              type="button">
-                              <Glyphicon
-                                bsClass="glyphicon"
-                                glyph="plus">
-                                <span
-                                  className="glyphicon glyphicon-plus" />
-                              </Glyphicon>
-                               Add
-                            </button>
-                          </Button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </Table>
+                              onClick={[Function]}>
+                              <button
+                                className="btn-xs btn-success btn btn-default"
+                                disabled={false}
+                                id="add-item-btn"
+                                onClick={[Function]}
+                                type="button">
+                                <Glyphicon
+                                  bsClass="glyphicon"
+                                  glyph="plus">
+                                  <span
+                                    className="glyphicon glyphicon-plus" />
+                                </Glyphicon>
+                                 Add
+                              </button>
+                            </Button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </Table>
+                </div>
               </div>
-            </div>
-          </FormGroup>
-          <FormGroup
-            bsClass="form-group"
-            controlId="total">
-            <div
-              className="form-group">
-              <ControlLabel
-                bsClass="control-label"
-                srOnly={false}>
-                <label
-                  className="control-label"
-                  htmlFor="total">
-                  Total Due
-                </label>
-              </ControlLabel>
-              <FormControlStatic
-                bsClass="form-control-static"
-                componentClass="p">
-                <p
-                  className="form-control-static">
-                  $0.00
-                </p>
-              </FormControlStatic>
-            </div>
-          </FormGroup>
-          <FormGroup
-            bsClass="form-group"
-            controlId="notes">
-            <div
-              className="form-group">
-              <ControlLabel
-                bsClass="control-label"
-                srOnly={false}>
-                <label
-                  className="control-label"
-                  htmlFor="notes">
-                  Notes
-                </label>
-              </ControlLabel>
-              <FormControl
-                bsClass="form-control"
-                componentClass="textArea"
-                onChange={[Function]}
-                placeholder="Enter notes"
-                value="">
-                <textArea
-                  className="form-control"
-                  id="notes"
+            </FormGroup>
+            <FormGroup
+              bsClass="form-group"
+              controlId="total">
+              <div
+                className="form-group">
+                <ControlLabel
+                  bsClass="control-label"
+                  srOnly={false}>
+                  <label
+                    className="control-label"
+                    htmlFor="total">
+                    Total Due
+                  </label>
+                </ControlLabel>
+                <FormControlStatic
+                  bsClass="form-control-static"
+                  componentClass="p">
+                  <p
+                    className="form-control-static">
+                    $0.00
+                  </p>
+                </FormControlStatic>
+              </div>
+            </FormGroup>
+            <FormGroup
+              bsClass="form-group"
+              controlId="notes">
+              <div
+                className="form-group">
+                <ControlLabel
+                  bsClass="control-label"
+                  srOnly={false}>
+                  <label
+                    className="control-label"
+                    htmlFor="notes">
+                    Notes
+                  </label>
+                </ControlLabel>
+                <FormControl
+                  bsClass="form-control"
+                  componentClass="textArea"
                   onChange={[Function]}
                   placeholder="Enter notes"
-                  value="" />
-              </FormControl>
-            </div>
-          </FormGroup>
-          <div
-            className="text-right">
-            <LinkContainer
-              activeClassName="active"
-              className="btn-default btn-lg"
-              exact={true}
-              replace={false}
-              strict={false}
-              to="/">
-              <Route
+                  value="">
+                  <textArea
+                    className="form-control"
+                    id="notes"
+                    onChange={[Function]}
+                    placeholder="Enter notes"
+                    value="" />
+                </FormControl>
+              </div>
+            </FormGroup>
+            <div
+              className="text-right">
+              <LinkContainer
+                activeClassName="active"
+                className="btn-default btn-lg"
                 exact={true}
-                path="/"
-                strict={false}>
-                <Button
-                  active={false}
-                  block={false}
-                  bsClass="btn"
-                  bsStyle="default"
-                  className="btn-default btn-lg active"
-                  disabled={false}
-                  href="/"
-                  onClick={[Function]}
-                  style={Object {}}>
-                  <SafeAnchor
-                    className="btn-default btn-lg active btn btn-default"
-                    componentClass="a"
+                replace={false}
+                strict={false}
+                to="/">
+                <Route
+                  exact={true}
+                  path="/"
+                  strict={false}>
+                  <Button
+                    active={false}
+                    block={false}
+                    bsClass="btn"
+                    bsStyle="default"
+                    className="btn-default btn-lg active"
                     disabled={false}
                     href="/"
                     onClick={[Function]}
                     style={Object {}}>
-                    <a
+                    <SafeAnchor
                       className="btn-default btn-lg active btn btn-default"
+                      componentClass="a"
+                      disabled={false}
                       href="/"
                       onClick={[Function]}
                       style={Object {}}>
-                      Cancel
-                    </a>
-                  </SafeAnchor>
-                </Button>
-              </Route>
-            </LinkContainer>
-            <Button
-              active={false}
-              block={false}
-              bsClass="btn"
-              bsStyle="default"
-              className="btn-success btn-lg"
-              disabled={false}
-              id="submit"
-              type="submit">
-              <button
-                className="btn-success btn-lg btn btn-default"
+                      <a
+                        className="btn-default btn-lg active btn btn-default"
+                        href="/"
+                        onClick={[Function]}
+                        style={Object {}}>
+                        Cancel
+                      </a>
+                    </SafeAnchor>
+                  </Button>
+                </Route>
+              </LinkContainer>
+              <Button
+                active={false}
+                block={false}
+                bsClass="btn"
+                bsStyle="default"
+                className="btn-success btn-lg"
                 disabled={false}
                 id="submit"
                 type="submit">
-                Save
-              </button>
-            </Button>
-          </div>
-        </form>
-        <p />
-      </div>
+                <button
+                  className="btn-success btn-lg btn btn-default"
+                  disabled={false}
+                  id="submit"
+                  type="submit">
+                  Save
+                </button>
+              </Button>
+            </div>
+          </form>
+          <p />
+        </div>
+      </styled.div>
     </InvoiceForm>
   </Router>
 </BrowserRouter>

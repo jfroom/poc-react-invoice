@@ -1,5 +1,5 @@
 exports[`test empty 1`] = `
-<div>
+<styled.div>
   <h1>
     Invoices
   </h1>
@@ -101,11 +101,11 @@ exports[`test empty 1`] = `
       $0.00
     </FormControlStatic>
   </FormGroup>
-</div>
+</styled.div>
 `;
 
 exports[`test full list with delete & status filter mocks 1`] = `
-<div>
+<styled.div>
   <h1>
     Invoices
   </h1>
@@ -388,5 +388,5 @@ exports[`test full list with delete & status filter mocks 1`] = `
       $13,091.98
     </FormControlStatic>
   </FormGroup>
-</div>
+</styled.div>
 `;

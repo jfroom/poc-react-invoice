@@ -1,7 +1,7 @@
 exports[`test renders without crashing 1`] = `
 <BrowserRouter
   basename="">
-  <div>
+  <styled.div>
     <Header />
     <div
       className="App container text-left">
@@ -17,6 +17,6 @@ exports[`test renders without crashing 1`] = `
         component={[Function]}
         path="/edit" />
     </div>
-  </div>
+  </styled.div>
 </BrowserRouter>
 `;
