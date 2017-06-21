@@ -1,21 +1,28 @@
-exports[`test renders without crashing 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
 <BrowserRouter
-  basename="">
+  basename=""
+>
   <styled.div>
     <Header />
     <div
-      className="App container text-left">
+      className="App container text-left"
+    >
       <withRouter(Breadcrumb) />
       <Route
         component={[Function]}
         exact={true}
-        path="/" />
+        path="/"
+      />
       <Route
         component={[Function]}
-        path="/new" />
+        path="/new"
+      />
       <Route
         component={[Function]}
-        path="/edit" />
+        path="/edit"
+      />
     </div>
   </styled.div>
 </BrowserRouter>

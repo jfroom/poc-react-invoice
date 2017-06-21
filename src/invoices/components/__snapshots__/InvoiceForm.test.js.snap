@@ -1,4 +1,6 @@
-exports[`test edit invoice 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`edit invoice 1`] = `
 <BrowserRouter>
   <Router
     history={
@@ -21,7 +23,8 @@ exports[`test edit invoice 1`] = `
         "push": [Function],
         "replace": [Function],
       }
-    }>
+    }
+  >
     <InvoiceForm
       handleAddInvoice={[Function]}
       handleEditInvoice={[Function]}
@@ -43,10 +46,12 @@ exports[`test edit invoice 1`] = `
           "status": "Paid",
           "title": "Test title",
         }
-      }>
+      }
+    >
       <styled.div>
         <div
-          className="sc-bdVaJa hdXCUo">
+          className="sc-bdVaJa hdXCUo"
+        >
           <h1>
             Edit
              Invoice
@@ -54,22 +59,29 @@ exports[`test edit invoice 1`] = `
           <hr />
           <form
             id="form"
-            onSubmit={[Function]}>
+            onSubmit={[Function]}
+          >
             <div
-              className="row">
+              className="row"
+            >
               <div
-                className="col-sm-8">
+                className="col-sm-8"
+              >
                 <FormGroup
                   bsClass="form-group"
-                  controlId="title">
+                  controlId="title"
+                >
                   <div
-                    className="form-group">
+                    className="form-group"
+                  >
                     <ControlLabel
                       bsClass="control-label"
-                      srOnly={false}>
+                      srOnly={false}
+                    >
                       <label
                         className="control-label"
-                        htmlFor="title">
+                        htmlFor="title"
+                      >
                         Title
                       </label>
                     </ControlLabel>
@@ -79,31 +91,38 @@ exports[`test edit invoice 1`] = `
                       onChange={[Function]}
                       placeholder="Enter title"
                       type="text"
-                      value="Test title">
+                      value="Test title"
+                    >
                       <input
                         className="form-control"
                         id="title"
                         onChange={[Function]}
                         placeholder="Enter title"
                         type="text"
-                        value="Test title" />
+                        value="Test title"
+                      />
                     </FormControl>
                   </div>
                 </FormGroup>
               </div>
               <div
-                className="col-sm-2">
+                className="col-sm-2"
+              >
                 <FormGroup
                   bsClass="form-group"
-                  controlId="date">
+                  controlId="date"
+                >
                   <div
-                    className="form-group">
+                    className="form-group"
+                  >
                     <ControlLabel
                       bsClass="control-label"
-                      srOnly={false}>
+                      srOnly={false}
+                    >
                       <label
                         className="control-label"
-                        htmlFor="date">
+                        htmlFor="date"
+                      >
                         Due Date
                       </label>
                     </ControlLabel>
@@ -113,31 +132,38 @@ exports[`test edit invoice 1`] = `
                       onChange={[Function]}
                       placeholder="Ex. 1/1/2017"
                       type="text"
-                      value="1/2/2017">
+                      value="1/2/2017"
+                    >
                       <input
                         className="form-control"
                         id="date"
                         onChange={[Function]}
                         placeholder="Ex. 1/1/2017"
                         type="text"
-                        value="1/2/2017" />
+                        value="1/2/2017"
+                      />
                     </FormControl>
                   </div>
                 </FormGroup>
               </div>
               <div
-                className="col-sm-2">
+                className="col-sm-2"
+              >
                 <FormGroup
                   bsClass="form-group"
-                  controlId="status">
+                  controlId="status"
+                >
                   <div
-                    className="form-group">
+                    className="form-group"
+                  >
                     <ControlLabel
                       bsClass="control-label"
-                      srOnly={false}>
+                      srOnly={false}
+                    >
                       <label
                         className="control-label"
-                        htmlFor="status">
+                        htmlFor="status"
+                      >
                         Status
                       </label>
                     </ControlLabel>
@@ -145,18 +171,22 @@ exports[`test edit invoice 1`] = `
                       bsClass="form-control"
                       componentClass="select"
                       onChange={[Function]}
-                      value="Paid">
+                      value="Paid"
+                    >
                       <select
                         className="form-control"
                         id="status"
                         onChange={[Function]}
-                        value="Paid">
+                        value="Paid"
+                      >
                         <option
-                          value="Unpaid">
+                          value="Unpaid"
+                        >
                           Unpaid
                         </option>
                         <option
-                          value="Paid">
+                          value="Paid"
+                        >
                           Paid
                         </option>
                       </select>
@@ -166,28 +196,35 @@ exports[`test edit invoice 1`] = `
               </div>
             </div>
             <FormGroup
-              bsClass="form-group">
+              bsClass="form-group"
+            >
               <div
-                className="form-group">
+                className="form-group"
+              >
                 <ControlLabel
                   bsClass="control-label"
-                  srOnly={false}>
+                  srOnly={false}
+                >
                   <label
-                    className="control-label">
+                    className="control-label"
+                  >
                     Line Items
                   </label>
                 </ControlLabel>
                 <div
-                  className="well">
+                  className="well"
+                >
                   <Table
                     bordered={false}
                     bsClass="table"
                     condensed={false}
                     hover={false}
                     responsive={false}
-                    striped={false}>
+                    striped={false}
+                  >
                     <table
-                      className="table">
+                      className="table"
+                    >
                       <thead>
                         <tr>
                           <th>
@@ -217,17 +254,21 @@ exports[`test edit invoice 1`] = `
                               bsStyle="default"
                               className="btn-xs btn-danger btn-delete-item"
                               disabled={false}
-                              onClick={[Function]}>
+                              onClick={[Function]}
+                            >
                               <button
                                 className="btn-xs btn-danger btn-delete-item btn btn-default"
                                 disabled={false}
                                 onClick={[Function]}
-                                type="button">
+                                type="button"
+                              >
                                 <Glyphicon
                                   bsClass="glyphicon"
-                                  glyph="trash">
+                                  glyph="trash"
+                                >
                                   <span
-                                    className="glyphicon glyphicon-trash" />
+                                    className="glyphicon glyphicon-trash"
+                                  />
                                 </Glyphicon>
                               </button>
                             </Button>
@@ -248,17 +289,21 @@ exports[`test edit invoice 1`] = `
                               bsStyle="default"
                               className="btn-xs btn-danger btn-delete-item"
                               disabled={false}
-                              onClick={[Function]}>
+                              onClick={[Function]}
+                            >
                               <button
                                 className="btn-xs btn-danger btn-delete-item btn btn-default"
                                 disabled={false}
                                 onClick={[Function]}
-                                type="button">
+                                type="button"
+                              >
                                 <Glyphicon
                                   bsClass="glyphicon"
-                                  glyph="trash">
+                                  glyph="trash"
+                                >
                                   <span
-                                    className="glyphicon glyphicon-trash" />
+                                    className="glyphicon glyphicon-trash"
+                                  />
                                 </Glyphicon>
                               </button>
                             </Button>
@@ -268,9 +313,11 @@ exports[`test edit invoice 1`] = `
                           <td>
                             <FormGroup
                               bsClass="form-group"
-                              controlId="lineItemText">
+                              controlId="lineItemText"
+                            >
                               <div
-                                className="form-group">
+                                className="form-group"
+                              >
                                 <FormControl
                                   bsClass="form-control"
                                   componentClass="input"
@@ -278,14 +325,16 @@ exports[`test edit invoice 1`] = `
                                   onChange={[Function]}
                                   placeholder="Enter line item"
                                   type="text"
-                                  value="">
+                                  value=""
+                                >
                                   <input
                                     className="form-control"
                                     id="lineItemText"
                                     onChange={[Function]}
                                     placeholder="Enter line item"
                                     type="text"
-                                    value="" />
+                                    value=""
+                                  />
                                 </FormControl>
                               </div>
                             </FormGroup>
@@ -293,9 +342,11 @@ exports[`test edit invoice 1`] = `
                           <td>
                             <FormGroup
                               bsClass="form-group"
-                              controlId="lineItemPrice">
+                              controlId="lineItemPrice"
+                            >
                               <div
-                                className="form-group">
+                                className="form-group"
+                              >
                                 <FormControl
                                   bsClass="form-control"
                                   componentClass="input"
@@ -304,7 +355,8 @@ exports[`test edit invoice 1`] = `
                                   placeholder="Enter price"
                                   step="any"
                                   type="number"
-                                  value="">
+                                  value=""
+                                >
                                   <input
                                     className="form-control"
                                     id="lineItemPrice"
@@ -313,7 +365,8 @@ exports[`test edit invoice 1`] = `
                                     placeholder="Enter price"
                                     step="any"
                                     type="number"
-                                    value="" />
+                                    value=""
+                                  />
                                 </FormControl>
                               </div>
                             </FormGroup>
@@ -327,18 +380,22 @@ exports[`test edit invoice 1`] = `
                               className="btn-xs btn-success"
                               disabled={false}
                               id="add-item-btn"
-                              onClick={[Function]}>
+                              onClick={[Function]}
+                            >
                               <button
                                 className="btn-xs btn-success btn btn-default"
                                 disabled={false}
                                 id="add-item-btn"
                                 onClick={[Function]}
-                                type="button">
+                                type="button"
+                              >
                                 <Glyphicon
                                   bsClass="glyphicon"
-                                  glyph="plus">
+                                  glyph="plus"
+                                >
                                   <span
-                                    className="glyphicon glyphicon-plus" />
+                                    className="glyphicon glyphicon-plus"
+                                  />
                                 </Glyphicon>
                                  Add
                               </button>
@@ -353,23 +410,29 @@ exports[`test edit invoice 1`] = `
             </FormGroup>
             <FormGroup
               bsClass="form-group"
-              controlId="total">
+              controlId="total"
+            >
               <div
-                className="form-group">
+                className="form-group"
+              >
                 <ControlLabel
                   bsClass="control-label"
-                  srOnly={false}>
+                  srOnly={false}
+                >
                   <label
                     className="control-label"
-                    htmlFor="total">
+                    htmlFor="total"
+                  >
                     Total Due
                   </label>
                 </ControlLabel>
                 <FormControlStatic
                   bsClass="form-control-static"
-                  componentClass="p">
+                  componentClass="p"
+                >
                   <p
-                    className="form-control-static">
+                    className="form-control-static"
+                  >
                     $0.00
                   </p>
                 </FormControlStatic>
@@ -377,15 +440,19 @@ exports[`test edit invoice 1`] = `
             </FormGroup>
             <FormGroup
               bsClass="form-group"
-              controlId="notes">
+              controlId="notes"
+            >
               <div
-                className="form-group">
+                className="form-group"
+              >
                 <ControlLabel
                   bsClass="control-label"
-                  srOnly={false}>
+                  srOnly={false}
+                >
                   <label
                     className="control-label"
-                    htmlFor="notes">
+                    htmlFor="notes"
+                  >
                     Notes
                   </label>
                 </ControlLabel>
@@ -394,29 +461,34 @@ exports[`test edit invoice 1`] = `
                   componentClass="textArea"
                   onChange={[Function]}
                   placeholder="Enter notes"
-                  value="Test notes">
+                  value="Test notes"
+                >
                   <textArea
                     className="form-control"
                     id="notes"
                     onChange={[Function]}
                     placeholder="Enter notes"
-                    value="Test notes" />
+                    value="Test notes"
+                  />
                 </FormControl>
               </div>
             </FormGroup>
             <div
-              className="text-right">
+              className="text-right"
+            >
               <LinkContainer
                 activeClassName="active"
                 className="btn-default btn-lg"
                 exact={true}
                 replace={false}
                 strict={false}
-                to="/">
+                to="/"
+              >
                 <Route
                   exact={true}
                   path="/"
-                  strict={false}>
+                  strict={false}
+                >
                   <Button
                     active={false}
                     block={false}
@@ -426,19 +498,22 @@ exports[`test edit invoice 1`] = `
                     disabled={false}
                     href="/"
                     onClick={[Function]}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     <SafeAnchor
                       className="btn-default btn-lg active btn btn-default"
                       componentClass="a"
                       disabled={false}
                       href="/"
                       onClick={[Function]}
-                      style={Object {}}>
+                      style={Object {}}
+                    >
                       <a
                         className="btn-default btn-lg active btn btn-default"
                         href="/"
                         onClick={[Function]}
-                        style={Object {}}>
+                        style={Object {}}
+                      >
                         Cancel
                       </a>
                     </SafeAnchor>
@@ -453,12 +528,14 @@ exports[`test edit invoice 1`] = `
                 className="btn-success btn-lg"
                 disabled={false}
                 id="submit"
-                type="submit">
+                type="submit"
+              >
                 <button
                   className="btn-success btn-lg btn btn-default"
                   disabled={false}
                   id="submit"
-                  type="submit">
+                  type="submit"
+                >
                   Save
                 </button>
               </Button>
@@ -472,7 +549,7 @@ exports[`test edit invoice 1`] = `
 </BrowserRouter>
 `;
 
-exports[`test new invoice 1`] = `
+exports[`new invoice 1`] = `
 <BrowserRouter>
   <Router
     history={
@@ -495,7 +572,8 @@ exports[`test new invoice 1`] = `
         "push": [Function],
         "replace": [Function],
       }
-    }>
+    }
+  >
     <InvoiceForm
       handleAddInvoice={[Function]}
       handleEditInvoice={[Function]}
@@ -509,10 +587,12 @@ exports[`test new invoice 1`] = `
           "title": "",
           "total": 0,
         }
-      }>
+      }
+    >
       <styled.div>
         <div
-          className="sc-bdVaJa hdXCUo">
+          className="sc-bdVaJa hdXCUo"
+        >
           <h1>
             New
              Invoice
@@ -520,22 +600,29 @@ exports[`test new invoice 1`] = `
           <hr />
           <form
             id="form"
-            onSubmit={[Function]}>
+            onSubmit={[Function]}
+          >
             <div
-              className="row">
+              className="row"
+            >
               <div
-                className="col-sm-8">
+                className="col-sm-8"
+              >
                 <FormGroup
                   bsClass="form-group"
-                  controlId="title">
+                  controlId="title"
+                >
                   <div
-                    className="form-group">
+                    className="form-group"
+                  >
                     <ControlLabel
                       bsClass="control-label"
-                      srOnly={false}>
+                      srOnly={false}
+                    >
                       <label
                         className="control-label"
-                        htmlFor="title">
+                        htmlFor="title"
+                      >
                         Title
                       </label>
                     </ControlLabel>
@@ -545,31 +632,38 @@ exports[`test new invoice 1`] = `
                       onChange={[Function]}
                       placeholder="Enter title"
                       type="text"
-                      value="">
+                      value=""
+                    >
                       <input
                         className="form-control"
                         id="title"
                         onChange={[Function]}
                         placeholder="Enter title"
                         type="text"
-                        value="" />
+                        value=""
+                      />
                     </FormControl>
                   </div>
                 </FormGroup>
               </div>
               <div
-                className="col-sm-2">
+                className="col-sm-2"
+              >
                 <FormGroup
                   bsClass="form-group"
-                  controlId="date">
+                  controlId="date"
+                >
                   <div
-                    className="form-group">
+                    className="form-group"
+                  >
                     <ControlLabel
                       bsClass="control-label"
-                      srOnly={false}>
+                      srOnly={false}
+                    >
                       <label
                         className="control-label"
-                        htmlFor="date">
+                        htmlFor="date"
+                      >
                         Due Date
                       </label>
                     </ControlLabel>
@@ -579,31 +673,38 @@ exports[`test new invoice 1`] = `
                       onChange={[Function]}
                       placeholder="Ex. 1/1/2017"
                       type="text"
-                      value="">
+                      value=""
+                    >
                       <input
                         className="form-control"
                         id="date"
                         onChange={[Function]}
                         placeholder="Ex. 1/1/2017"
                         type="text"
-                        value="" />
+                        value=""
+                      />
                     </FormControl>
                   </div>
                 </FormGroup>
               </div>
               <div
-                className="col-sm-2">
+                className="col-sm-2"
+              >
                 <FormGroup
                   bsClass="form-group"
-                  controlId="status">
+                  controlId="status"
+                >
                   <div
-                    className="form-group">
+                    className="form-group"
+                  >
                     <ControlLabel
                       bsClass="control-label"
-                      srOnly={false}>
+                      srOnly={false}
+                    >
                       <label
                         className="control-label"
-                        htmlFor="status">
+                        htmlFor="status"
+                      >
                         Status
                       </label>
                     </ControlLabel>
@@ -611,18 +712,22 @@ exports[`test new invoice 1`] = `
                       bsClass="form-control"
                       componentClass="select"
                       onChange={[Function]}
-                      value="Unpaid">
+                      value="Unpaid"
+                    >
                       <select
                         className="form-control"
                         id="status"
                         onChange={[Function]}
-                        value="Unpaid">
+                        value="Unpaid"
+                      >
                         <option
-                          value="Unpaid">
+                          value="Unpaid"
+                        >
                           Unpaid
                         </option>
                         <option
-                          value="Paid">
+                          value="Paid"
+                        >
                           Paid
                         </option>
                       </select>
@@ -632,28 +737,35 @@ exports[`test new invoice 1`] = `
               </div>
             </div>
             <FormGroup
-              bsClass="form-group">
+              bsClass="form-group"
+            >
               <div
-                className="form-group">
+                className="form-group"
+              >
                 <ControlLabel
                   bsClass="control-label"
-                  srOnly={false}>
+                  srOnly={false}
+                >
                   <label
-                    className="control-label">
+                    className="control-label"
+                  >
                     Line Items
                   </label>
                 </ControlLabel>
                 <div
-                  className="well">
+                  className="well"
+                >
                   <Table
                     bordered={false}
                     bsClass="table"
                     condensed={false}
                     hover={false}
                     responsive={false}
-                    striped={false}>
+                    striped={false}
+                  >
                     <table
-                      className="table">
+                      className="table"
+                    >
                       <thead>
                         <tr>
                           <th>
@@ -672,9 +784,11 @@ exports[`test new invoice 1`] = `
                           <td>
                             <FormGroup
                               bsClass="form-group"
-                              controlId="lineItemText">
+                              controlId="lineItemText"
+                            >
                               <div
-                                className="form-group">
+                                className="form-group"
+                              >
                                 <FormControl
                                   bsClass="form-control"
                                   componentClass="input"
@@ -682,14 +796,16 @@ exports[`test new invoice 1`] = `
                                   onChange={[Function]}
                                   placeholder="Enter line item"
                                   type="text"
-                                  value="">
+                                  value=""
+                                >
                                   <input
                                     className="form-control"
                                     id="lineItemText"
                                     onChange={[Function]}
                                     placeholder="Enter line item"
                                     type="text"
-                                    value="" />
+                                    value=""
+                                  />
                                 </FormControl>
                               </div>
                             </FormGroup>
@@ -697,9 +813,11 @@ exports[`test new invoice 1`] = `
                           <td>
                             <FormGroup
                               bsClass="form-group"
-                              controlId="lineItemPrice">
+                              controlId="lineItemPrice"
+                            >
                               <div
-                                className="form-group">
+                                className="form-group"
+                              >
                                 <FormControl
                                   bsClass="form-control"
                                   componentClass="input"
@@ -708,7 +826,8 @@ exports[`test new invoice 1`] = `
                                   placeholder="Enter price"
                                   step="any"
                                   type="number"
-                                  value="">
+                                  value=""
+                                >
                                   <input
                                     className="form-control"
                                     id="lineItemPrice"
@@ -717,7 +836,8 @@ exports[`test new invoice 1`] = `
                                     placeholder="Enter price"
                                     step="any"
                                     type="number"
-                                    value="" />
+                                    value=""
+                                  />
                                 </FormControl>
                               </div>
                             </FormGroup>
@@ -731,18 +851,22 @@ exports[`test new invoice 1`] = `
                               className="btn-xs btn-success"
                               disabled={false}
                               id="add-item-btn"
-                              onClick={[Function]}>
+                              onClick={[Function]}
+                            >
                               <button
                                 className="btn-xs btn-success btn btn-default"
                                 disabled={false}
                                 id="add-item-btn"
                                 onClick={[Function]}
-                                type="button">
+                                type="button"
+                              >
                                 <Glyphicon
                                   bsClass="glyphicon"
-                                  glyph="plus">
+                                  glyph="plus"
+                                >
                                   <span
-                                    className="glyphicon glyphicon-plus" />
+                                    className="glyphicon glyphicon-plus"
+                                  />
                                 </Glyphicon>
                                  Add
                               </button>
@@ -757,23 +881,29 @@ exports[`test new invoice 1`] = `
             </FormGroup>
             <FormGroup
               bsClass="form-group"
-              controlId="total">
+              controlId="total"
+            >
               <div
-                className="form-group">
+                className="form-group"
+              >
                 <ControlLabel
                   bsClass="control-label"
-                  srOnly={false}>
+                  srOnly={false}
+                >
                   <label
                     className="control-label"
-                    htmlFor="total">
+                    htmlFor="total"
+                  >
                     Total Due
                   </label>
                 </ControlLabel>
                 <FormControlStatic
                   bsClass="form-control-static"
-                  componentClass="p">
+                  componentClass="p"
+                >
                   <p
-                    className="form-control-static">
+                    className="form-control-static"
+                  >
                     $0.00
                   </p>
                 </FormControlStatic>
@@ -781,15 +911,19 @@ exports[`test new invoice 1`] = `
             </FormGroup>
             <FormGroup
               bsClass="form-group"
-              controlId="notes">
+              controlId="notes"
+            >
               <div
-                className="form-group">
+                className="form-group"
+              >
                 <ControlLabel
                   bsClass="control-label"
-                  srOnly={false}>
+                  srOnly={false}
+                >
                   <label
                     className="control-label"
-                    htmlFor="notes">
+                    htmlFor="notes"
+                  >
                     Notes
                   </label>
                 </ControlLabel>
@@ -798,29 +932,34 @@ exports[`test new invoice 1`] = `
                   componentClass="textArea"
                   onChange={[Function]}
                   placeholder="Enter notes"
-                  value="">
+                  value=""
+                >
                   <textArea
                     className="form-control"
                     id="notes"
                     onChange={[Function]}
                     placeholder="Enter notes"
-                    value="" />
+                    value=""
+                  />
                 </FormControl>
               </div>
             </FormGroup>
             <div
-              className="text-right">
+              className="text-right"
+            >
               <LinkContainer
                 activeClassName="active"
                 className="btn-default btn-lg"
                 exact={true}
                 replace={false}
                 strict={false}
-                to="/">
+                to="/"
+              >
                 <Route
                   exact={true}
                   path="/"
-                  strict={false}>
+                  strict={false}
+                >
                   <Button
                     active={false}
                     block={false}
@@ -830,19 +969,22 @@ exports[`test new invoice 1`] = `
                     disabled={false}
                     href="/"
                     onClick={[Function]}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     <SafeAnchor
                       className="btn-default btn-lg active btn btn-default"
                       componentClass="a"
                       disabled={false}
                       href="/"
                       onClick={[Function]}
-                      style={Object {}}>
+                      style={Object {}}
+                    >
                       <a
                         className="btn-default btn-lg active btn btn-default"
                         href="/"
                         onClick={[Function]}
-                        style={Object {}}>
+                        style={Object {}}
+                      >
                         Cancel
                       </a>
                     </SafeAnchor>
@@ -857,12 +999,14 @@ exports[`test new invoice 1`] = `
                 className="btn-success btn-lg"
                 disabled={false}
                 id="submit"
-                type="submit">
+                type="submit"
+              >
                 <button
                   className="btn-success btn-lg btn btn-default"
                   disabled={false}
                   id="submit"
-                  type="submit">
+                  type="submit"
+                >
                   Save
                 </button>
               </Button>

@@ -1,57 +1,71 @@
-exports[`test empty 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty 1`] = `
 <styled.div>
   <h1>
     Invoices
   </h1>
   <hr />
   <div
-    className="row">
+    className="row"
+  >
     <div
-      className="col-sm-9">
+      className="col-sm-9"
+    >
       <LinkContainer
         activeClassName="active"
         exact={false}
         replace={false}
         strict={false}
-        to="/new">
+        to="/new"
+      >
         <Button
           active={false}
           block={false}
           bsClass="btn"
           bsSize="large"
           bsStyle="success"
-          disabled={false}>
+          disabled={false}
+        >
           <Glyphicon
             bsClass="glyphicon"
-            glyph="plus" />
+            glyph="plus"
+          />
            
            New Invoice
         </Button>
       </LinkContainer>
     </div>
     <div
-      className="col-sm-3">
+      className="col-sm-3"
+    >
       <div
-        className="form-group">
+        className="form-group"
+      >
         <label
-          className="control-label">
+          className="control-label"
+        >
           Status Filter
         </label>
         <select
           className="form-control"
           id="status-filter"
           onChange={[Function]}
-          value="Paid">
+          value="Paid"
+        >
           <option
-            value="">
+            value=""
+          >
             View All
           </option>
           <option
-            value="Unpaid">
+            value="Unpaid"
+          >
             Unpaid
           </option>
           <option
-            value="Paid">
+            value="Paid"
+          >
             Paid
           </option>
         </select>
@@ -65,7 +79,8 @@ exports[`test empty 1`] = `
     condensed={true}
     hover={true}
     responsive={false}
-    striped={false}>
+    striped={false}
+  >
     <thead>
       <tr>
         <th>
@@ -89,75 +104,90 @@ exports[`test empty 1`] = `
   </Table>
   <FormGroup
     bsClass="form-group"
-    controlId="total">
+    controlId="total"
+  >
     <ControlLabel
       bsClass="control-label"
-      srOnly={false}>
+      srOnly={false}
+    >
       Grand Total
     </ControlLabel>
     <FormControlStatic
       bsClass="form-control-static"
-      componentClass="p">
+      componentClass="p"
+    >
       $0.00
     </FormControlStatic>
   </FormGroup>
 </styled.div>
 `;
 
-exports[`test full list with delete & status filter mocks 1`] = `
+exports[`full list with delete & status filter mocks 1`] = `
 <styled.div>
   <h1>
     Invoices
   </h1>
   <hr />
   <div
-    className="row">
+    className="row"
+  >
     <div
-      className="col-sm-9">
+      className="col-sm-9"
+    >
       <LinkContainer
         activeClassName="active"
         exact={false}
         replace={false}
         strict={false}
-        to="/new">
+        to="/new"
+      >
         <Button
           active={false}
           block={false}
           bsClass="btn"
           bsSize="large"
           bsStyle="success"
-          disabled={false}>
+          disabled={false}
+        >
           <Glyphicon
             bsClass="glyphicon"
-            glyph="plus" />
+            glyph="plus"
+          />
            
            New Invoice
         </Button>
       </LinkContainer>
     </div>
     <div
-      className="col-sm-3">
+      className="col-sm-3"
+    >
       <div
-        className="form-group">
+        className="form-group"
+      >
         <label
-          className="control-label">
+          className="control-label"
+        >
           Status Filter
         </label>
         <select
           className="form-control"
           id="status-filter"
           onChange={[Function]}
-          value="Paid">
+          value="Paid"
+        >
           <option
-            value="">
+            value=""
+          >
             View All
           </option>
           <option
-            value="Unpaid">
+            value="Unpaid"
+          >
             Unpaid
           </option>
           <option
-            value="Paid">
+            value="Paid"
+          >
             Paid
           </option>
         </select>
@@ -171,7 +201,8 @@ exports[`test full list with delete & status filter mocks 1`] = `
     condensed={true}
     hover={true}
     responsive={false}
-    striped={false}>
+    striped={false}
+  >
     <thead>
       <tr>
         <th>
@@ -194,7 +225,8 @@ exports[`test full list with delete & status filter mocks 1`] = `
     <tbody>
       <tr
         className=""
-        onClick={[Function]}>
+        onClick={[Function]}
+      >
         <td>
           1/1/2020
         </td>
@@ -205,7 +237,8 @@ exports[`test full list with delete & status filter mocks 1`] = `
           $7,000.00
         </td>
         <td
-          className="status">
+          className="status"
+        >
           Unpaid
         </td>
         <td>
@@ -216,26 +249,31 @@ exports[`test full list with delete & status filter mocks 1`] = `
             bsStyle="default"
             className="btn-xs btn-primary"
             disabled={false}
-            onClick={[Function]}>
+            onClick={[Function]}
+          >
             <Glyphicon
               bsClass="glyphicon"
-              glyph="pencil" />
+              glyph="pencil"
+            />
           </Button>
           <a
             href="mailto:?subject=Invoice:%20Hoyt%20Residence%20Kitchen%20Remodel&body=Please view your invoice at this web page: http://example.com/invoices/1"
             onClick={[Function]}
             rel="noopener noreferrer"
-            target="_blank">
+            target="_blank"
+          >
             <Button
               active={false}
               block={false}
               bsClass="btn"
               bsStyle="default"
               className="btn-xs btn-info"
-              disabled={false}>
+              disabled={false}
+            >
               <Glyphicon
                 bsClass="glyphicon"
-                glyph="envelope" />
+                glyph="envelope"
+              />
             </Button>
           </a>
           <Button
@@ -245,16 +283,19 @@ exports[`test full list with delete & status filter mocks 1`] = `
             bsStyle="default"
             className="btn-xs btn-danger btn-delete"
             disabled={false}
-            onClick={[Function]}>
+            onClick={[Function]}
+          >
             <Glyphicon
               bsClass="glyphicon"
-              glyph="trash" />
+              glyph="trash"
+            />
           </Button>
         </td>
       </tr>
       <tr
         className=""
-        onClick={[Function]}>
+        onClick={[Function]}
+      >
         <td>
           5/1/2017
         </td>
@@ -265,7 +306,8 @@ exports[`test full list with delete & status filter mocks 1`] = `
           $3,000.99
         </td>
         <td
-          className="status">
+          className="status"
+        >
           Paid
         </td>
         <td>
@@ -276,26 +318,31 @@ exports[`test full list with delete & status filter mocks 1`] = `
             bsStyle="default"
             className="btn-xs btn-primary"
             disabled={false}
-            onClick={[Function]}>
+            onClick={[Function]}
+          >
             <Glyphicon
               bsClass="glyphicon"
-              glyph="pencil" />
+              glyph="pencil"
+            />
           </Button>
           <a
             href="mailto:?subject=Invoice:%20Lovejoy%20Residence%20Bathroom%20Remodel&body=Please view your invoice at this web page: http://example.com/invoices/2"
             onClick={[Function]}
             rel="noopener noreferrer"
-            target="_blank">
+            target="_blank"
+          >
             <Button
               active={false}
               block={false}
               bsClass="btn"
               bsStyle="default"
               className="btn-xs btn-info"
-              disabled={false}>
+              disabled={false}
+            >
               <Glyphicon
                 bsClass="glyphicon"
-                glyph="envelope" />
+                glyph="envelope"
+              />
             </Button>
           </a>
           <Button
@@ -305,16 +352,19 @@ exports[`test full list with delete & status filter mocks 1`] = `
             bsStyle="default"
             className="btn-xs btn-danger btn-delete"
             disabled={false}
-            onClick={[Function]}>
+            onClick={[Function]}
+          >
             <Glyphicon
               bsClass="glyphicon"
-              glyph="trash" />
+              glyph="trash"
+            />
           </Button>
         </td>
       </tr>
       <tr
         className="overdue"
-        onClick={[Function]}>
+        onClick={[Function]}
+      >
         <td>
           5/10/2017
         </td>
@@ -325,7 +375,8 @@ exports[`test full list with delete & status filter mocks 1`] = `
           $3,090.99
         </td>
         <td
-          className="status">
+          className="status"
+        >
           Unpaid
         </td>
         <td>
@@ -336,26 +387,31 @@ exports[`test full list with delete & status filter mocks 1`] = `
             bsStyle="default"
             className="btn-xs btn-primary"
             disabled={false}
-            onClick={[Function]}>
+            onClick={[Function]}
+          >
             <Glyphicon
               bsClass="glyphicon"
-              glyph="pencil" />
+              glyph="pencil"
+            />
           </Button>
           <a
             href="mailto:?subject=Invoice:%20Glisan%20Residence%20Living%20Room%20Remodel&body=Please view your invoice at this web page: http://example.com/invoices/3"
             onClick={[Function]}
             rel="noopener noreferrer"
-            target="_blank">
+            target="_blank"
+          >
             <Button
               active={false}
               block={false}
               bsClass="btn"
               bsStyle="default"
               className="btn-xs btn-info"
-              disabled={false}>
+              disabled={false}
+            >
               <Glyphicon
                 bsClass="glyphicon"
-                glyph="envelope" />
+                glyph="envelope"
+              />
             </Button>
           </a>
           <Button
@@ -365,10 +421,12 @@ exports[`test full list with delete & status filter mocks 1`] = `
             bsStyle="default"
             className="btn-xs btn-danger btn-delete"
             disabled={false}
-            onClick={[Function]}>
+            onClick={[Function]}
+          >
             <Glyphicon
               bsClass="glyphicon"
-              glyph="trash" />
+              glyph="trash"
+            />
           </Button>
         </td>
       </tr>
@@ -376,15 +434,18 @@ exports[`test full list with delete & status filter mocks 1`] = `
   </Table>
   <FormGroup
     bsClass="form-group"
-    controlId="total">
+    controlId="total"
+  >
     <ControlLabel
       bsClass="control-label"
-      srOnly={false}>
+      srOnly={false}
+    >
       Grand Total
     </ControlLabel>
     <FormControlStatic
       bsClass="form-control-static"
-      componentClass="p">
+      componentClass="p"
+    >
       $13,091.98
     </FormControlStatic>
   </FormGroup>

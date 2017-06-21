@@ -1,6 +1,4 @@
 [ignore]
-.*/node_modules/enzyme-matchers/.*
-.*/node_modules/jest-enzyme/.*
 .*/node_modules/styled-components/.*
 
 [include]

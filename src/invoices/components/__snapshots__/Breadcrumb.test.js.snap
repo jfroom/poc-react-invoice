@@ -1,4 +1,6 @@
-exports[`test Invoices / Edit Invoice 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Invoices / Edit Invoice 1`] = `
 <BrowserRouter>
   <Router
     history={
@@ -21,18 +23,22 @@ exports[`test Invoices / Edit Invoice 1`] = `
         "push": [Function],
         "replace": [Function],
       }
-    }>
+    }
+  >
     <Breadcrumb
       location={
         Object {
           "pathname": "/edit/1",
         }
-      }>
+      }
+    >
       <styled.div>
         <div
-          className="sc-bdVaJa hhwEPU">
+          className="sc-bdVaJa hhwEPU"
+        >
           <ol
-            className="breadcrumb">
+            className="breadcrumb"
+          >
             <li>
               <LinkContainer
                 activeClassName="active"
@@ -40,16 +46,19 @@ exports[`test Invoices / Edit Invoice 1`] = `
                 isActive={[Function]}
                 replace={false}
                 strict={false}
-                to="/">
+                to="/"
+              >
                 <Route
                   exact={false}
                   path="/"
-                  strict={false}>
+                  strict={false}
+                >
                   <a
                     className=" active"
                     href="/"
                     onClick={[Function]}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     Invoices
                   </a>
                 </Route>
@@ -68,7 +77,7 @@ exports[`test Invoices / Edit Invoice 1`] = `
 </BrowserRouter>
 `;
 
-exports[`test Invoices / New Invoice 1`] = `
+exports[`Invoices / New Invoice 1`] = `
 <BrowserRouter>
   <Router
     history={
@@ -91,18 +100,22 @@ exports[`test Invoices / New Invoice 1`] = `
         "push": [Function],
         "replace": [Function],
       }
-    }>
+    }
+  >
     <Breadcrumb
       location={
         Object {
           "pathname": "/new",
         }
-      }>
+      }
+    >
       <styled.div>
         <div
-          className="sc-bdVaJa hhwEPU">
+          className="sc-bdVaJa hhwEPU"
+        >
           <ol
-            className="breadcrumb">
+            className="breadcrumb"
+          >
             <li>
               <LinkContainer
                 activeClassName="active"
@@ -110,16 +123,19 @@ exports[`test Invoices / New Invoice 1`] = `
                 isActive={[Function]}
                 replace={false}
                 strict={false}
-                to="/">
+                to="/"
+              >
                 <Route
                   exact={false}
                   path="/"
-                  strict={false}>
+                  strict={false}
+                >
                   <a
                     className=" active"
                     href="/"
                     onClick={[Function]}
-                    style={Object {}}>
+                    style={Object {}}
+                  >
                     Invoices
                   </a>
                 </Route>
@@ -138,7 +154,7 @@ exports[`test Invoices / New Invoice 1`] = `
 </BrowserRouter>
 `;
 
-exports[`test Invoices 1`] = `
+exports[`Invoices 1`] = `
 <BrowserRouter>
   <Router
     history={
@@ -161,18 +177,22 @@ exports[`test Invoices 1`] = `
         "push": [Function],
         "replace": [Function],
       }
-    }>
+    }
+  >
     <Breadcrumb
       location={
         Object {
           "pathname": "/",
         }
-      }>
+      }
+    >
       <styled.div>
         <div
-          className="sc-bdVaJa hhwEPU">
+          className="sc-bdVaJa hhwEPU"
+        >
           <ol
-            className="breadcrumb">
+            className="breadcrumb"
+          >
             <li>
               <span>
                 Invoices
