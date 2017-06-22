@@ -60,5 +60,4 @@ Demo: https://jfroom.github.io/poc-react-invoice
 - [Testing React components with Jest and Enzyme](https://hackernoon.com/testing-react-components-with-jest-and-enzyme-41d592c174f)
 
 # TODO
-- 'enzyme-matchers' & 'jest-enzyme' packages are not flowtyped so project is throwing Flow errors based on that. Related to this issue: https://github.com/blainekasten/enzyme-matchers/issues/77. Ignoring for now in `.flowconfig`
 - Styled-Components v2 flow types WIP: https://github.com/styled-components/styled-components/issues/843 - ignoring in `.flowconfig`
